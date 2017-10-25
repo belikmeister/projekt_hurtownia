@@ -52,7 +52,6 @@ Hurtownia sprzêtu komputerowego.
 Projekt bêdzie realizowany przy u¿yciu (zaadaptowanej do istniej¹cych warunków) metodyki {\em Scrum}. 
 
 \section{Wymagania u¿ytkownika}
-<<Przedstawiæ listê wymagañ u¿ytkownika w postaci ,,historyjek'' (User stories). Ka¿da historyjka powinna opisywaæ jedn¹ cechê systemu. Struktura: As a [type of user], I want [to perform some task] so that I can [achieve some goal/benefit/value] (zob. np. \cite{us}).>>
 
 \subsection{User story 1}
 Jako klient chcê mieæ mo¿liwoœæ zalogowania na konto klienta wczeœniej utworzone przez administratora w celu korzystania z funkcji programu.
@@ -65,7 +64,7 @@ Jako klient chcê mieæ mo¿liwoœæ edycji zamówienia z poziomu podgl¹du aby w przyp
 \subsection{User story 5}
 Jako klient chcê mieæ mo¿liwoœæ pobierania faktur aby wygodnie rozliczaæ zakupy.
 \subsection{User story 6}
-Jako klient chcê mieæ mo¿liwoœæ otrzymania faktur na pocztê elektroniczn¹ w celu prowadzenia archiwum faktur w formie elektoronicznej.
+Jako klient chcê mieæ mo¿liwoœæ otrzymania faktur na pocztê elektroniczn¹ w celu prowadzenia archiwum faktur w formie elektronicznej.
 \subsection{User story 7}
 Jako klient chcê mieæ mo¿liwoœæ podgl¹du dostêpnych produktów aby zapoznaæ siê z nowoœciami.
 \subsection{User story 8}
@@ -94,45 +93,78 @@ Jako pracownik chcê mieæ mo¿liwoœæ wystawiania zestawieñ przyk³adowo najczêœciej
 \subsection{Rejestr zadañ (Product Backlog)}
 
 \begin{itemize}
-\item Data rozpoczêcia: <<data>>.
-\item  Data zakoñczenia: <<data>>.
+\item Data rozpoczêcia: 25.10.2017
+\item  Data zakoñczenia: 08.11.2017
 \end{itemize}
 
 \subsection{Sprint 1}
 
 \begin{itemize}
-\item Data rozpoczêcia: <<data>>.
-\item Data zakoñczenia: <<data>>.
-\item Scrum Master: <<imiê i nazwisko>>.
-\item Product Owner: <<imiê i nazwisko>>.
-\item Development Team: <<lista developerów>>.
+\item Data rozpoczêcia: 09.11.2017.
+\item Data zakoñczenia: 22.11.2017.
+\item Scrum Master: Jakub Wêglarz.
+\item Product Owner: £ukasz Wide³.
+\item Development Team: \\Jakub Wêglarz \\
+Micha³ W¹cha³a \\
+£ukasz Wide³ 
 \end{itemize}
 
 \subsection{Sprint 2}
 
 \begin{itemize}
-\item Data rozpoczêcia: <<data>>.
-\item  Data zakoñczenia: <<data>>.
-\item Scrum Master: <<imiê i nazwisko>>.
-\item Product Owner: <<imiê i nazwisko>>.
-\item Development Team: <<lista developerów>>.
+\item Data rozpoczêcia: 23.11.2017.
+\item  Data zakoñczenia: 06.12.2017.
+\item Scrum Master: Micha³ W¹cha³a.
+\item Product Owner: Jakub Wêglarz.
+\item Development Team:\\Jakub Wêglarz \\
+Micha³ W¹cha³a \\
+£ukasz Wide³ 
 \end{itemize}
 
-\subsection*{<<Tutaj dodawaæ kolejne Sprint'y>>}
+\subsection{Sprint 3}
+
+\begin{itemize}
+\item Data rozpoczêcia: 07.11.2017.
+\item  Data zakoñczenia: 20.12.2017.
+\item Scrum Master: £ukasz Wide³.
+\item Product Owner: Micha³ W¹cha³a.
+\item Development Team:\\Jakub Wêglarz \\
+Micha³ W¹cha³a \\
+£ukasz Wide³ 
+\end{itemize}
+
+\subsection{Sprint 4}
+
+\begin{itemize}
+\item Data rozpoczêcia: 21.12.2017.
+\item  Data zakoñczenia: 17.01.2018.
+\item Scrum Master: Jakub Wêglarz.
+\item Product Owner: £ukasz Wide³.
+\item Development Team:\\Jakub Wêglarz \\
+Micha³ W¹cha³a \\
+£ukasz Wide³ 
+\end{itemize}
+
 
 \section{Product Backlog}
 
 \subsection{Backlog Item 1}
-\paragraph{Tytu³ zadania.} <<Tytu³>>.
-\paragraph{Opis zadania.} <<Opis>>.
-\paragraph{Priorytet.} <<Priorytet>>.
-\paragraph{Definition of Done.} <<Okreœliæ (w jêzyku zrozumia³ym dla wszystkich cz³onków zespo³u), co oznacza ukoñczenie danego zadania>>.
+\paragraph{Tytu³ zadania.} Logowanie Klienta.
+\paragraph{Opis zadania.} Utworzenie interfejsu graficznego oraz napisanie skryptu logowania wraz z obs³ug¹ sesji.
+\paragraph{Priorytet.} Bardzo Wa¿ne.
+\paragraph{Definition of Done.} Klient ma mo¿liwoœæ zalogowania siê do systemu podaj¹c login i has³o ustalone przez administratora. Zaimplementowana jest obs³uga sesji logowania.
 
 \subsection{Backlog Item 2}
-\paragraph{Tytu³ zadania.} <<Tytu³>>.
-\paragraph{Opis zadania.} <<Opis>>.
-\paragraph{Priorytet.} <<Priorytet>>.
-\paragraph{Definition of Done.} <<Okreœliæ (w jêzyku zrozumia³ym dla wszystkich cz³onków zespo³u), co oznacza ukoñczenie danego zadania>>.
+\paragraph{Tytu³ zadania.} Sk³adanie zamówieñ.
+\paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie bazy danych przechowuj¹cej dane produktów, dostawców, stany magazynowe i dane klientów. Zaprojektowanie i wdro¿enie skryptu php umo¿liwiaj¹cego z³o¿enie zamówienia czyli zapisanie w bazie danych o produktach wybranych przez klienta. Zaprojektowanie i wdro¿enie interfejsu w jêzyku html do obs³ugi skryptu.
+\paragraph{Priorytet.} Bardzo Wa¿ne.
+\paragraph{Definition of Done.} Klient ma mo¿liwoœæ z³o¿enia zamówienia, które zostaje zapisane w bazie danych.
+
+\subsection{Backlog Item 3}
+\paragraph{Tytu³ zadania.} Podgl¹d dostêpnych produktów.
+\paragraph{Opis zadania.} 
+\paragraph{Priorytet.} Bardzo Wa¿ne.
+\paragraph{Definition of Done.} Klient ma mo¿liwoœæ z³o¿enia zamówienia, które zostaje zapisane w bazie danych.
 
 \subsection*{<<Tutaj dodawaæ kolejne zadania>>}
 

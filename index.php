@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="pl">
 	<head>
@@ -13,7 +16,10 @@
 	//TUTAJ BĘDZIE LOGO I MENU	//
 	//							//
 	///////////////////////////-->
-	
+<?php 
+if(isset($_SESSION['blad'])){
+echo $_SESSION['blad'];}
+?>	
 <form action=zaloguj.php method="post">
 <table>
   <tr>

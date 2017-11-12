@@ -1,3 +1,4 @@
+use hurtownia;
 INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(1, 'Jurek', 'Owsiak', 'Wrzeciono', 'Warszawa', 23851, 446112113);
 
 INSERT INTO pracownicy(id_pracownika, imie, nazwisko, adres) VALUES(1, 'Diho', 'Orangutan', 'Ty z ekipą ja sam z bronią');

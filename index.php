@@ -19,6 +19,9 @@ session_start();
 <?php 
 if(isset($_SESSION['blad'])){
 echo $_SESSION['blad'];}
+if(isset($_SESSION['zalogowany'])&&$_SESSION['zalogowany']==true)
+{header('Location: menu_klienta.php');
+exit();}
 ?>	
 <form action=zaloguj.php method="post">
 <table>

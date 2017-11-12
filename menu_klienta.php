@@ -15,6 +15,11 @@
 	//							//
 	///////////////////////////-->
 <?php
+if(!isset($_SESSION['zalogowany']))
+{
+	header('location: index.php');
+	exit();
+}
 require_once"connect.php";
 $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 $id=$_SESSION['id_klienta'];
@@ -23,6 +28,7 @@ $odpowiedz=$polaczenie->query($dane);
 $wiersz=$odpowiedz->fetch_assoc();
 $_SESSION['imie']=$wiersz['imie'];
 $_SESSION['nazwisko']=$wiersz['nazwisko'];
+echo "<a href=wyloguj.php>Wyloguj</a>";
 echo "<p> SIEMA ".$_SESSION['imie']." ".$_SESSION['nazwisko'];
 ?>
 </body>

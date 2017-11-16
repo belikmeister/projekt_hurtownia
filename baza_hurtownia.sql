@@ -54,7 +54,6 @@ CONSTRAINT logp_fk FOREIGN KEY(id_pracownika) REFERENCES pracownicy(id_pracownik
 CREATE TABLE baza_produktow(
 id_produktu int not null,
 nazwa varchar(40),
-jednostka int,
 kategoria enum('monitory', 'hardware', 'obudowy', 'akcesoria'),
 id_dostawcy int not null,
 CONSTRAINT bp_pk PRIMARY KEY(id_produktu),

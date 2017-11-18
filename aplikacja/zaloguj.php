@@ -36,7 +36,7 @@ else{
 			$_SESSION['user']=$wiersz['login_klienta'];
 			$_SESSION['id_klienta']=$wiersz['id_klienta'];
 			$odpowiedz->free_result();
-			header('Location: menu_klienta.php');
+			header('Location: menu_test.php');
 			unset($_SESSION['blad']);
 			
 			

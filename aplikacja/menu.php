@@ -1,3 +1,25 @@
+<?php
+session_start();
+if(!isset($_SESSION['zalogowany']))
+{
+	header('location: index.php');
+	exit();
+}
+require_once"connect.php";
+$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+$id=$_SESSION['id_klienta'];
+$dane="SELECT imie,nazwisko from klienci where id_klienta='$id';";
+$odpowiedz=$polaczenie->query($dane);
+$wiersz=$odpowiedz->fetch_assoc();
+$_SESSION['imie']=$wiersz['imie'];
+$_SESSION['nazwisko']=$wiersz['nazwisko'];
+echo "<a href=wyloguj.php>Wyloguj</a>";
+echo "<div align=left> SIEMA ".$_SESSION['imie']." ".$_SESSION['nazwisko']."</div>";
+?>
+
+
+
+
 <!DOCTYPE HTML> 
 
 <HTML lang="pl">
@@ -36,7 +58,7 @@
 	<a href="podglad_zamowien.html">Podgląd zamówień</a><br>
 	<a href="edytuj_zamowienie.html">Edytuj zamówienie</a><br>
 	<a href="pobierz_fakture">Pobierz fakturę</a><br>
-	<a href="podglad_dostepnych_produktów.html">Podgląd dostępnych produktów</a><br>
+	<a href="wyswietl_produkty.php">Podgląd dostępnych produktów</a><br>
 	<a href="wyszukaj_produkt.html">Wyszukaj produkt</a><br>
 	<a href="sprawdz_stan_realizacji.html">Sprawdź stan realizacji zamówienia</a><br>
 	<a href="Edytuj_dane_osobowe">Edytuj dane osobowe</a><br>

@@ -38,19 +38,25 @@
 		</ul></div></div>
 <div id="TRESC">
 
-<div id="bar"> <div class="optionbar">NAZWA</div> <div class="optionbar">CENA(ZŁ/SZT)</div> <div class="optionbar">ILOŚĆ</div></div>
+<div id="bar"> 
+	<div class="optionbar-nazwa">NAZWA</div> <div class="optionbar-cena">CENA(ZŁ/SZT)</div> <div class="optionbar-ilosc">ILOŚĆ</div> <div class="optionbar-ilosc">SZT</div> <div class="optionbar-koszyk">Dodaj do koszyka</div>
+</div>
 <div style="clear:both;"></div>
 <?php
-require_once"connect.php";
-$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-$dane="SELECT * from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu ";
-$odpowiedz=$polaczenie->query($dane);
-while($wiersz=$odpowiedz->fetch_assoc()){
-echo 
-"<div class=wpis><div class=pole>".$wiersz['nazwa'].
-" </div><div class=pole>".$wiersz['cena'].
-"</div><div class=pole> ".$wiersz['ilosc'].
-"</div></div>";}
+	require_once"connect.php";
+	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+	$dane="SELECT * from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu ";
+	$odpowiedz=$polaczenie->query($dane);
+		while($wiersz=$odpowiedz->fetch_assoc())
+		{
+			echo 
+			 "<div class=wpis>".
+			 "<div class=nazwa>".$wiersz['nazwa']."</div>".
+			 "<div class=cena>".$wiersz['cena']."</div>".
+			 "<div class=ilosc>".$wiersz['ilosc']."</div>".
+			 "<div class=ilosc><input type=number min=1 max=".$wiersz['ilosc']."></div>".
+			 "<div class=koszyk><img src=images/cart.png></div></div>";
+		}
 ?>
 
 

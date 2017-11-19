@@ -47,7 +47,7 @@ $odpowiedz=$polaczenie->query($dane);
 while($wiersz=$odpowiedz->fetch_assoc()){
 echo 
 "<div class=ramka><div>".$wiersz['nazwa'].
-" </div><div>".$wiersz['cena'].
+" </div><div>".$wiersz['cena']."zł".
 "</div><div> ".$wiersz['ilosc'].
 "</div></div>";}
 ?>

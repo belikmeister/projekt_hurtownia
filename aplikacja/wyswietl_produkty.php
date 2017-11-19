@@ -11,7 +11,6 @@
 	<body>
 <div id="top">
 	<div id="NAGLOWEK"><img src="images/logo.png" class=srodek></div>
-	<a href=wyloguj.php>Wyloguj</a>
 	<div id="MENU">
 		  <ul>
 			  <li><a href="">Realizuj zamówienie</a></li>
@@ -38,7 +37,8 @@
 		</ul></div></div>
 <div id="TRESC">
 
-
+<div id="bar"> <div class="optionbar">NAZWA</div> <div class="optionbar">CENA(ZŁ/SZT)</div> <div class="optionbar">ILOŚĆ</div></div>
+<div style="clear:both;"></div>
 <?php
 require_once"connect.php";
 $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
@@ -46,9 +46,9 @@ $dane="SELECT * from magazyn inner join baza_produktow on magazyn.id_produktu=ba
 $odpowiedz=$polaczenie->query($dane);
 while($wiersz=$odpowiedz->fetch_assoc()){
 echo 
-"<div class=ramka><div>".$wiersz['nazwa'].
-" </div><div>".$wiersz['cena']."zł".
-"</div><div> ".$wiersz['ilosc'].
+"<div class=wpis><div class=pole>".$wiersz['nazwa'].
+" </div><div class=pole>".$wiersz['cena'].
+"</div><div class=pole> ".$wiersz['ilosc'].
 "</div></div>";}
 ?>
 

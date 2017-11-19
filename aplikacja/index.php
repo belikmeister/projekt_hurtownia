@@ -4,36 +4,31 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="pl">
 	<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
 		<title>
 		Logowanie Klienta
 		</title>
 	</head>
 	
 	<body>
-	<!--//////////////////////////
-	//							//
-	//							//
-	//TUTAJ BĘDZIE LOGO I MENU	//
-	//							//
-	///////////////////////////-->
+<div id="top">
+	<div id="NAGLOWEK"><img src="images/logo.png" class=srodek></div>
+	
+<div id="TRESC">
+<div id="LOGOWANIE">
 <?php 
 if(isset($_SESSION['blad'])){
 echo $_SESSION['blad'];}
 if(isset($_SESSION['zalogowany'])&&$_SESSION['zalogowany']==true)
 {header('Location: menu_test.php');
 exit();}
-?>	
+?>
 <form action=zaloguj.php method="post">
-<table>
-  <tr>
-    <td>Login</td>
-    <td><input type=text name=login class=logowanie></td>
-  </tr>
-  <tr>
-    <td>Hasło</td>
-    <td><input type=password name=haslo class=logowanie></td>
-  </tr>
-  <tr>
-    <td colspan="2"><input type=submit value=Zaloguj class=przycisk></td>
-  </tr>
-</table>
+<div > Login: <input type=text name=login class=logowanie></div><br>
+<div class=srodek> Hasło: <input type=password name=haslo class=logowanie></div><br>
+<div class=srodek><input type=submit value=Zaloguj class=przycisk></div></form></div>
+<!-- DIV Z TESCIA -->
+</div>
+</body>
+</html>

@@ -35,7 +35,7 @@
 			  <li><a href="">Edytuj dane osobowe</a></li>
 		</ul></div>
 <div id="TRESC">
-Coś
+
 <!-- DIV Z TESCIA -->
 </div>
 </body>

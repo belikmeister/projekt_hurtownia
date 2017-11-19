@@ -11,6 +11,7 @@
 	<body>
 <div id="top">
 	<div id="NAGLOWEK"><img src="images/logo.png" class=srodek></div>
+	<a href=wyloguj.php>Wyloguj</a>
 	<div id="MENU">
 		  <ul>
 			  <li><a href="">Realizuj zamówienie</a></li>
@@ -45,10 +46,10 @@ $dane="SELECT * from magazyn inner join baza_produktow on magazyn.id_produktu=ba
 $odpowiedz=$polaczenie->query($dane);
 while($wiersz=$odpowiedz->fetch_assoc()){
 echo 
-"<div class=ramka>".$wiersz['nazwa'].
-" ".$wiersz['cena'].
-" ".$wiersz['ilosc'].
-"</div>";}
+"<div class=ramka><div>".$wiersz['nazwa'].
+" </div><div>".$wiersz['cena'].
+"</div><div> ".$wiersz['ilosc'].
+"</div></div>";}
 ?>
 
 

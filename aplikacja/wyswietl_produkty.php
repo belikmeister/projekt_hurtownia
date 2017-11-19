@@ -11,6 +11,7 @@
 	<body>
 <div id="top">
 	<div id="NAGLOWEK"><img src="images/logo.png" class=srodek></div>
+	<a href=wyloguj.php>Wyloguj</a>
 	<div id="MENU">
 		  <ul>
 			  <li><a href="">Realizuj zamówienie</a></li>

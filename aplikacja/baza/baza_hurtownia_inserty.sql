@@ -55,7 +55,7 @@ CONSTRAINT bp_fk2 FOREIGN KEY(id_dostawcy) REFERENCES dostawcy(id_dostawcy)
 );
 
 CREATE TABLE zamowienie(
-id_zamowienia int not null,
+id_zamowienia int not null AUTO_INCREMENT,
 id_klienta int not null,
 data_zamowienia TIMESTAMP,
 status ENUM('zamowione', 'realizacja', 'wyslane'),
@@ -66,6 +66,8 @@ CONSTRAINT zm_fk1 FOREIGN KEY(id_klienta) REFERENCES logowanie_klienta(id_klient
 CREATE TABLE dane_zamowienia(
 id_produktu int not null,
 id_zamowienia int not null,
+ilosc_zamowionych int not null,
+
 CONSTRAINT dz_pk PRIMARY KEY(id_produktu, id_zamowienia),
 CONSTRAINT dz_fk FOREIGN KEY(id_produktu) REFERENCES baza_produktow(id_produktu),
 CONSTRAINT dz_fk1 FOREIGN KEY(id_zamowienia) REFERENCES zamowienie(id_zamowienia)

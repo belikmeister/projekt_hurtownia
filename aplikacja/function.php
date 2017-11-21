@@ -4,7 +4,7 @@ $produkt=$_POST['id'];
 $ilosc=$_POST['ilosc'];
 function dodaj_do_koszyka($produkt,$ilosc)
 {	
-	if(!isset($_POST['ilosc'])||!isset($_POST['id']))
+	if(!isset($_POST['ilosc'])||$_POST['ilosc']==0||!isset($_POST['id']))
 	{
 		header('location: wyswietl_produkty.php');
 		exit();

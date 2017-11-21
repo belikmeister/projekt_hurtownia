@@ -32,7 +32,7 @@ if(isset($_SESSION['pusty_koszyk']))
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
-			echo "<form action='function.php' method=post>";
+			echo "<form action='koszyk.php' method=post>";
 			echo 
 			 "<div class=wpis>".
 			 "<div class=nazwa>".$wiersz['id_produktu']." - ".$wiersz['nazwa']."</div>".

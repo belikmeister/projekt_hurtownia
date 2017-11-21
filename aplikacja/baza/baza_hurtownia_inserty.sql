@@ -86,11 +86,25 @@ INSERT INTO dostawcy VALUES(3, 'whocares', 'wc3@example.com');
 
 INSERT INTO magazyn VALUES(1, 412.99, 30);
 INSERT INTO magazyn VALUES(2, 79.30, 40);
-INSERT INTO magazyn VALUES(3, 249.99, 10);
+INSERT INTO magazyn VALUES(3, 315.80, 10);
+INSERT INTO magazyn VALUES(4, 25.69, 20);
+INSERT INTO magazyn VALUES(5, 65.40, 50);
+INSERT INTO magazyn VALUES(6, 685.42, 27);
+INSERT INTO magazyn VALUES(7, 2540.00, 3);
+INSERT INTO magazyn VALUES(8, 365.99, 42);
+INSERT INTO magazyn VALUES(9, 99.85, 30);
+INSERT INTO magazyn VALUES(10, 100.23, 18);
 
 INSERT INTO baza_produktow VALUES(1, 'LG G21', 'monitory', 1);
 INSERT INTO baza_produktow VALUES(2, 'GOODRAM BR12 DDR3', 'hardware', 2);
-INSERT INTO baza_produktow VALUES(3, 'RAZER FX32', 'akcesoria', 3);
+INSERT INTO baza_produktow VALUES(3, 'INTEL i3 4500K', 'hardware', 1);
+INSERT INTO baza_produktow VALUES(4, 'HUB USB X3', 'akcesoria', 3);
+INSERT INTO baza_produktow VALUES(5, 'Karta sieciowa LAN', 'akcesoria', 2);
+INSERT INTO baza_produktow VALUES(6, 'EZIO Z450 27"', 'monitory', 3);
+INSERT INTO baza_produktow VALUES(7, 'GeForce GTX1080', 'hardware', 1);
+INSERT INTO baza_produktow VALUES(8, 'AMD FX434', 'hardware', 1);
+INSERT INTO baza_produktow VALUES(9, 'Obudowa Aerocool Q34', 'akcesoria', 1);
+INSERT INTO baza_produktow VALUES(10, 'Klawiatura Corsair Strafe', 'akcesoria', 3);
 
 
 

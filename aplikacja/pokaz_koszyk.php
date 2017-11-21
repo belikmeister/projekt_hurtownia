@@ -29,7 +29,7 @@ if(!isset($_SESSION['koszyk']))
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-	
+	$kwota=0;
 	$rozmiar= count($_SESSION['koszyk']);
 	for($i=0;$i<$rozmiar;$i++)
 	{
@@ -47,11 +47,13 @@ if(!isset($_SESSION['koszyk']))
 			
 		}
 		//echo $id." ".$ilosc;
+		
 		$dane="SELECT nazwa,cena from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu where magazyn.id_produktu=".$id."";
 		$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
 			$suma=$ilosc*$wiersz['cena'];
+			$kwota=$kwota+$suma;
 			echo 
 			 "<div class=wpis>".
 			 "<div class=nazwa>".$wiersz['nazwa']."</div>".
@@ -62,6 +64,7 @@ if(!isset($_SESSION['koszyk']))
 		
 		echo "<br>";
 	}
+	echo "Łączna wartość produktów w koszyku: ".$kwota."zł";
 	echo "<form action=zamow.php method=post><input type=submit value='złóż zamówienie'></form>";
 	unset($_SESSION['pusty_koszyk']);
 ?>

@@ -26,5 +26,5 @@ $polaczenie->query($dane);
 	}
 unset($_SESSION['koszyk']);
 $_SESSION['zamowiono']="Dziękujemy za złożenie zamówienia w naszym sklepie";
-header('location:menu_test.php');
+header('location:main.php');
 ?>

@@ -21,7 +21,7 @@ session_start();
 if(isset($_SESSION['blad'])){
 echo $_SESSION['blad'];}
 if(isset($_SESSION['zalogowany'])&&$_SESSION['zalogowany']==true)
-{header('Location: menu_test.php');
+{header('Location: main.php');
 exit();}
 ?>
 <form action=zaloguj.php method="post">

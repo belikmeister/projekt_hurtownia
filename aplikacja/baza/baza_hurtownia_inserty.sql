@@ -59,7 +59,6 @@ id_zamowienia int not null,
 id_klienta int not null,
 data_zamowienia TIMESTAMP,
 status ENUM('zamowione', 'realizacja', 'wyslane'),
-data_doreczenia DATE,
 CONSTRAINT zm_pk PRIMARY KEY(id_zamowienia),
 CONSTRAINT zm_fk1 FOREIGN KEY(id_klienta) REFERENCES logowanie_klienta(id_klienta)
 );

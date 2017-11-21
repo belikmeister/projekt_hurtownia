@@ -16,11 +16,8 @@ $polaczenie->query($dane);
 			if($s==1)
 			{
 				$ilosc=$_SESSION['koszyk'][$i][$s];
-			}
-			//echo $_SESSION['koszyk'][$i][$s]." ";
-			
+			}	
 		}
-		//echo $id." ".$ilosc;
 		$dane="SELECT id_zamowienia from zamowienie ORDER BY data_zamowienia desc limit 1;";
 		$odpowiedz=$polaczenie->query($dane);
 		$wiersz=$odpowiedz->fetch_assoc();
@@ -28,4 +25,6 @@ $polaczenie->query($dane);
 		$polaczenie->query($dane);
 	}
 unset($_SESSION['koszyk']);
+$_SESSION['zamowiono']="Dziękujemy za złożenie zamówienia w naszym sklepie";
+header('location:menu_test.php');
 ?>

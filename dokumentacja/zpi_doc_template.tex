@@ -321,7 +321,9 @@ Zaprojektowa³em interfejs oraz skrypt s³u¿¹cy do logowania, zaimplementowana zos
  Plik $connect.php$ jest plikiem pomocniczym który zawiera wszystkie dane potrzebne do po³¹czenia z baz¹ $MySQL$, takie dzia³anie ma na celu uniemo¿liwienie podgl¹dniêcia permisji bazodanowych. 
  
  Ostatni plik, $wyloguj.php,$ to skrypt kasuj¹cy sesjê czyli wylogowuj¹cy aktywnego u¿ytkownika, natychmiastowo koñczy sesjê i kasuje wszystkie zmienne globalne przechowywane w tablicy $"\$\_SESSION"$.
+ 
 \newpage
+
 \paragraph{Tytu³ zadania.} Interfejs testowy.
 \subparagraph{Wykonawca.} £ukasz Wide³.
 \subparagraph{Realizacja.} 
@@ -332,22 +334,25 @@ Wszystko zosta³o przes³ane do zdalnego repozytorium.
 
 
 
-<<<<<<< HEAD
+ 
 \paragraph{Tytu³ zadania.} Skrypt koszyka
 \subparagraph{Wykonawca.} Jakub Wêglarz
 \subparagraph{Realizacja.} Skrypt koszyka korzysta ze zmiennych sesyjnych oraz danych przesy³anych na bie¿¹co tablic¹ globaln¹ $"\$\_POST"$.
-Dzia³anie skryptu jest wywo³ywane przez przekierowanie akcji z formularza zawartego w pliku\\ $wyswietl\_produkty.php$ przez klikniêcie przycisku $Dodaj$ $do$ $koszyka$. W tym momencie dane s¹ przesy³ane do pliku $function.php$ i to w³aœnie tam nastêpuje walidacja danych oraz zapisanie informacji o dodanym produkcie oraz jego iloœci do tabeli sesyjnej $\$\_SESSION['koszyk']$.
-Skrypt zosta³ zabezpieczony przed dodaniem do tablicy produktu z zerow¹ iloœci¹
+Dzia³anie skryptu jest wywo³ywane przez przekierowanie akcji z formularza zawartego w pliku\\ $wyswietl\_produkty.php$ przez klikniêcie przycisku $Dodaj$ $do$ $koszyka$.
+
+ W tym momencie dane s¹ przesy³ane do pliku $function.php$ i to w³aœnie tam nastêpuje walidacja danych oraz zapisanie informacji o dodanym produkcie oraz jego iloœci do tablicy sesyjnej $\$\_SESSION['koszyk']$.
+
+Skrypt zosta³ zabezpieczony przed dodaniem do tablicy produktu z zerow¹ iloœci¹.
+
+Plik $pokaz\_koszyk.php$ zawiera skrypt odczytuj¹cy zawartoœæ tablicy sesyjnej $\$\_SESSION['koszyk']$ w celu sprawdzenia zawartoœci koszyka i z³o¿enia zamówienia.
+
+
+
 \paragraph{Tytu³ zadania.} Sk³adanie zamówieñ.
-=======
- \paragraph{Tytu³ zadania.} Sk³adanie zamówieñ.
->>>>>>> bec81e1384d0dae3e478e85d0094f1877f992143
 \subparagraph{Wykonawca.} Micha³ W¹cha³a
 \subparagraph{Realizacja.}
-...
+Zamawianie produktów odbywa siê poprzez wciœniêcie przycisku $zloz$ $zamowienie$ na stronie podgl¹du koszyka. Skrypt odczytuje dane z tablicy $\$\_SESSION['koszyk']$ i dokonuje wpisów w dwóch tabelach w bazie danych; w tabeli $zamowienie$ gdzie umieszczane jest id klienta oraz numer zamówienia, oraz w tabeli $dane\_zamowienia$ do której dodadawne s¹ poszczególne produkty i ich iloœci.
 
-
-\paragraph{<<Tutaj dodawaæ kolejne zadania>>}
 
 
 \subsection{Sprint Review/Demo}

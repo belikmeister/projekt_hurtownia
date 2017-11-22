@@ -23,7 +23,7 @@ if(!isset($_SESSION['koszyk']))
 <div id="TRESC">
 
 <div id="bar"> 
-	<div class="optionbar-nazwa">NAZWA</div> <div class="optionbar-cena">CENA(ZŁ/SZT)</div> <div class="optionbar-ilosc">ILOŚĆ</div> <div class="optionbar-ilosc">RAZEM</div> <div class="optionbar-koszyk">NWMCO</div>
+	<div class="optionbar-nazwa">NAZWA</div> <div class="optionbar-cena">CENA(ZŁ/SZT)</div> <div class="optionbar-ilosc">ILOŚĆ</div> <div class="optionbar-ilosc">RAZEM</div> <div class="optionbar-koszyk">Usuń</div>
 </div>
 <div style="clear:both;"></div>
 <?php
@@ -60,12 +60,15 @@ if(!isset($_SESSION['koszyk']))
 			 "<div class=cena>".$wiersz['cena']."</div>".
 			 "<div class=ilosc>".$ilosc."</div>".
 			 "<div class=ilosc>".$suma."</div>".
-			 "<div class=koszyk><input type='submit' value='Dodaj do koszyka' /></div></div>";}
+			 "<div class=koszyk><input type='submit' value='Usuń' /></div></div>";}
 		
 		echo "<br>";
 	}
 	echo "Łączna wartość produktów w koszyku: ".$kwota."zł";
 	echo "<form action=zamow.php method=post><input type=submit value='złóż zamówienie'></form>";
+	echo "<br>";
+	echo "<form action=kasuj_koszyk.php method=post><input type=submit value='Kasuj Koszyk'></form>";
+	
 	unset($_SESSION['pusty_koszyk']);
 ?>
 

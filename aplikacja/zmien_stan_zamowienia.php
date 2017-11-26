@@ -31,7 +31,8 @@
 			 "<div class=cena><select name='stan'>
 			  <option value='zamowione'>Zamówione</option>".
 			 "<option value='realizacja'>W Realizacji</option>".
-			 "<option value='wyslane'>Wysłane</option></select></div></div>";
+			 "<option value='wyslane'>Wysłane</option></select></div>".
+			 "<input type=submit value='Zmień stan'></div>";
 			 echo "</form>";
 			 
 		}

@@ -14,6 +14,9 @@
 <?php include('menu.php'); ?>
 </div>
 <div id="TRESC">
+<div id="bar"> 
+	<div class="nazwa">Numer Zamówienia</div> <div class="cena">ID Klienta</div> <div class="ilosc">Data zamówienia</div> <div class="ilosc">Aktualny stan</div>
+</div>
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);

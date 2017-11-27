@@ -14,6 +14,9 @@
 <?php include('menu.php'); ?>
 </div>
 <div id="TRESC">
+<div id="bar"> 
+	<div class="r15procent">Numer Zamówienia</div> <div class="r15procent">ID Klienta</div> <div class="r15procent">Data zamówienia</div> <div class="r17procent">Aktualny stan</div> <div class="r17procent">Nowy Stan</div> <div class="r15procent">Zmień</div>
+</div>
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
@@ -25,14 +28,16 @@
 			 echo "<form action='zmien_stan.php' method=post>";
 			 echo 
 			 "<div class=wpis>".
-			 "<div class=nazwa>".$wiersz['id_zamowienia']."</div>".
-			 "<div class=cena>".$wiersz['id_klienta']."</div>".
-			 "<div class=ilosc>".$wiersz['data_zamowienia']."</div>".
-			 "<div class=cena><select name='stan'>
+			 "<div class='r15procent'>".$wiersz['id_zamowienia']."</div>".
+			 "<div class=r15procent>".$wiersz['id_klienta']."</div>".
+			 "<div class=r15procent>".$wiersz['data_zamowienia']."</div>".
+			 "<div class=r17procent>".$wiersz['status']."</div>".
+			 "<div class=r17procent><select name='stan'>
 			  <option value='zamowione'>Zamówione</option>".
 			 "<option value='realizacja'>W Realizacji</option>".
 			 "<option value='wyslane'>Wysłane</option></select></div>".
-			 "<input type=submit value='Zmień stan'></div>";
+			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div>".
+			 "<div class=r15procent><input type=submit value='Zmień stan'></div></div>";
 			 echo "</form>";
 			 
 		}

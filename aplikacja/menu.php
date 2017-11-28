@@ -6,7 +6,7 @@ echo"<div id='NAGLOWEK'><img src='images/logo.png' class=srodek></div>
 			  <li><a href=''>Realizuj zamówienie</a></li>
 			  <li><a href='zmien_stan_zamowienia.php'>Zmień stan zamówienia</a></li>
 			  <li><a href=''>Zamów towar do magazynu</a></li>
-			  <li><a href=''>Sprawdź Stan Magazynu</a></li>
+			  <li><a href='sprawdz_stan_magazynu.php'>Sprawdź stan magazynu</a></li>
 			  <li><a href=''>Generuj fakturę</a></li>
 		</ul></div>
 			<div id='MENU'>

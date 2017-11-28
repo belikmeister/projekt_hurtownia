@@ -22,7 +22,6 @@ html, body {
 
 #MENU {
 	width: 1020px;
-	min-height: 190px;
 	float: center;
 	overflow: hidden;
 	margin-left: auto;
@@ -40,79 +39,28 @@ html, body {
 }
 
 
-ol
-{
-	text-align: center;
-	padding: 5px 0;
-	margin: 0;
-	list-style-type: none;
-	font-size: 18px;
-	height: 40px;
-	line-height: 200%;
-	display: inline-block;
-	background-color: #666666;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #888;
 }
 
-ol a
-{
-	color: #ffffff;
-	text-decoration: none;
-	display: block;
+li {
+    display: inline-block;
+}
+ 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-ol > li
-{
-	float: left;
-	width: 253px;
-	height: 40px;
-	border-right: 1px dashed #ffffff;
-}
-
-ol > li:first-child
-{
-	border-left: 1px dashed #ffffff;
-}
-
-ol > li:hover
-{
-	background-color: #666688;
-}
-
-ol > li:hover > a
-{
-	color: #ffffff;
-}
-
-ol > li > ul
-{
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	height: 40px;
-	display: none;
-}
-
-ol > li:hover > ul
-{
-	display: block;
-}
-
-ol > li > ul > li
-{
-	background-color:#666666;
-	position: relative;
-	z-index: 100;
-	border-top: 1px dashed #ffffff;
-}
-
-ol > li > ul > li:hover
-{
-	background-color: #666688
-}
-
-ol > li > ul > li:hover > a
-{
-	color: #ffffff;
+li a:hover {
+    background-color: #111;
 }
 
 body {

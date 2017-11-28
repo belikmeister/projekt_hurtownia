@@ -22,7 +22,7 @@ html, body {
 
 #MENU {
 	width: 1020px;
-	min-height: 190px;
+	min-height: 40px;
 	float: center;
 	overflow: hidden;
 	margin-left: auto;
@@ -51,6 +51,7 @@ ol
 	line-height: 200%;
 	display: inline-block;
 	background-color: #666666;
+	position:absolute;
 }
 
 ol a

@@ -1,6 +1,6 @@
 <?php
-echo"<div id='NAGLOWEK'><img src='images/logo.png' class=srodek></div>
-	<a href=wyloguj.php>Wyloguj</a>
+echo"<a href=main.php><div id='NAGLOWEK'><img src='images/logo.png' class=srodek></div></a>
+	<a href=wyloguj.php><div id='wyloguj'>Wyloguj</div></a>
 	<div id='MENU'>
 		  <ol>
 			  <li><a href=''>MAGAZYN</a>

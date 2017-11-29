@@ -21,7 +21,7 @@ echo"<div id='NAGLOWEK'><img src='images/logo.png' class=srodek></div>
 			  <li><a href=''>ZAMÓWIENIA</a>
 			  <ul>
 						<li><a href='wyswietl_produkty.php'>Złóż zamówienie</a></li>
-						<li><a href='#'>Podgląd zamówień</a></li>
+						<li><a href='wyswietl_zamowienia.php'>Podgląd zamówień</a></li>
 						<li><a href='pokaz_koszyk.php'>Pokaż koszyk</a></li>
 						<li><a href='sprawdz_stan_zamowienia.php'>Sprawdź stan realizacji</a></li>
 					</ul>

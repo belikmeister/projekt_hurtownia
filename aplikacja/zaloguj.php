@@ -24,7 +24,7 @@ else{
 	
 	
 	if($odpowiedz =$polaczenie->query(
-	sprintf("SELECT * FROM logowanie_klienta WHERE login_klienta='%s' AND haslo_klienta='%s'",
+	sprintf("SELECT * FROM logowanie WHERE login_klienta='%s' AND haslo_klienta='%s'",
 	mysqli_real_escape_string($polaczenie,$login),
 	mysqli_real_escape_string($polaczenie,$haslo))))
 	{

@@ -65,6 +65,7 @@ if(!isset($_SESSION['koszyk']))
 		echo "<br>";
 	}
 	echo "Łączna wartość produktów w koszyku: ".$kwota."zł";
+	$_SESSION['kwota']=$kwota;
 	echo "<form action=zamow.php method=post><input type=submit value='złóż zamówienie'></form>";
 	echo "<br>";
 	echo "<form action=kasuj_koszyk.php method=post><input type=submit value='Kasuj Koszyk'></form>";

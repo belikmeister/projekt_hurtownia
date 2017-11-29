@@ -35,10 +35,11 @@ email varchar(20),
 CONSTRAINT d_pk PRIMARY KEY(id_dostawcy)
 );
 
-CREATE TABLE logowanie_klienta(
+CREATE TABLE logowanie(
 id_klienta int not null,
 login_klienta varchar(20) not null,
 haslo_klienta varchar(200) not null,
+pracownik boolean,
 CONSTRAINT log_pk PRIMARY KEY(id_klienta),
 CONSTRAINT log_fk FOREIGN KEY(id_klienta) REFERENCES  klienci(id_klienta)
 );
@@ -59,8 +60,9 @@ id_zamowienia int not null AUTO_INCREMENT,
 id_klienta int not null,
 data_zamowienia TIMESTAMP,
 status ENUM('zamowione', 'realizacja', 'wyslane'),
+kwota float,
 CONSTRAINT zm_pk PRIMARY KEY(id_zamowienia),
-CONSTRAINT zm_fk1 FOREIGN KEY(id_klienta) REFERENCES logowanie_klienta(id_klienta)
+CONSTRAINT zm_fk1 FOREIGN KEY(id_klienta) REFERENCES logowanie(id_klienta)
 );
 
 CREATE TABLE dane_zamowienia(
@@ -75,10 +77,12 @@ CONSTRAINT dz_fk1 FOREIGN KEY(id_zamowienia) REFERENCES zamowienie(id_zamowienia
 
 use hurtownia;
 INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(1, 'Jurek', 'Owsiak', 'Wrzeciono', 'Warszawa', 23851, 446112113);
+INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(2, 'Pracownik', 'Czarek', 'Czarnobylska', 'Prypeć', 45956, 45847489);
 
 INSERT INTO pracownicy(id_pracownika, imie, nazwisko, adres) VALUES(1, 'Diho', 'Orangutan', 'Ty z ekipą ja sam z bronią');
 
-INSERT INTO logowanie_klienta(id_klienta, login_klienta, haslo_klienta) VALUES(1, 'test', '202cb962ac59075b964b07152d234b70');
+INSERT INTO logowanie(id_klienta, login_klienta, haslo_klienta, pracownik) VALUES(1, 'test', '202cb962ac59075b964b07152d234b70',0);
+INSERT INTO logowanie(id_klienta, login_klienta, haslo_klienta, pracownik) VALUES(2, 'pracownik', '202cb962ac59075b964b07152d234b70',1);
 
 INSERT INTO dostawcy VALUES(1, 'go4PC', 'gopc@example.com');
 INSERT INTO dostawcy VALUES(2, 'pchardware', 'pchard@example.com');

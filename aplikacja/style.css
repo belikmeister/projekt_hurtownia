@@ -247,6 +247,7 @@ width:300px;
 	min-height:35px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: auto;
 	text-align: center;
 	border: 2px solid #666666;
 	padding: 5px 10px 5px 20px;
@@ -324,3 +325,36 @@ width:300px;
 	padding: 2px 0px 0px 0px;
 }
 
+.danek
+{
+	border: medium solid #666666;
+	float:left;
+	padding: 10px 10px 10px 10px;
+	margin-left: 20px;
+	width: 45%;
+}
+.danes
+{
+	border: medium solid #666666;
+	float:right;
+	padding: 10px 10px 10px 10px;
+	margin-right: 20px;
+	width: 45%;
+}
+
+.r25procent
+{
+	width: 25%;
+	min-height:30px;
+	border: 2px solid #666666;
+	text-align: center;
+	float:left;
+	padding: 2px 0px 0px 0px;
+}
+
+.wiersz
+{
+	width:100%;
+	min-height:150px;
+
+}

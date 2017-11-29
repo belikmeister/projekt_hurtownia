@@ -358,3 +358,20 @@ width:300px;
 	min-height:150px;
 
 }
+
+#wyloguj
+{
+	width: 100px;
+	height: 20px;
+	border: 2px dashed white;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	background-color: #666666;
+}
+
+#wyloguj:hover
+{
+	background-color: #666688;
+}
+

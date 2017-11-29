@@ -18,14 +18,6 @@ echo"<a href=main.php><div id='NAGLOWEK'><img src='images/logo.png' class=srodek
 						<li><a href='#'>Pobierz fakturę</a></li>
 					</ul>
 			  </li>
-			  <li><a href=''>ZAMÓWIENIA</a>
-			  <ul>
-						<li><a href='wyswietl_produkty.php'>Złóż zamówienie</a></li>
-						<li><a href='wyswietl_zamowienia.php'>Podgląd zamówień</a></li>
-						<li><a href='pokaz_koszyk.php'>Pokaż koszyk</a></li>
-						<li><a href='sprawdz_stan_zamowienia.php'>Sprawdź stan realizacji</a></li>
-					</ul>
-			  </li>
 			  <li><a href=''>INNE</a>
 			  <ul>
 						<li><a href='#'>Wyszukaj produkt</a></li>

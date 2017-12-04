@@ -35,6 +35,7 @@ else{
 			$wiersz=$odpowiedz->fetch_assoc();
 			$_SESSION['user']=$wiersz['login_klienta'];
 			$_SESSION['id_klienta']=$wiersz['id_klienta'];
+			$_SESSION['pracownik']=$wiersz['pracownik'];
 			$odpowiedz->free_result();
 			header('Location: main.php');
 			unset($_SESSION['blad']);

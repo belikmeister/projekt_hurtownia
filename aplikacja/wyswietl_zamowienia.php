@@ -1,4 +1,4 @@
-
+<?php include('sprawdz_pracownika.php'); ?>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -15,7 +15,6 @@ include('menu.php');
 ?></div>
 <div id="TRESC">
 <?php
-	session_start();
 	$id_klienta=$_SESSION['id_klienta'];
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);

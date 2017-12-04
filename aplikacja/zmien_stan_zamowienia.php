@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
+<?php include('sprawdz_pracownika.php'); ?>
 <html>
 	<head>
-<?php session_start() ?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 		<title>

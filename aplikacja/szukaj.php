@@ -16,10 +16,10 @@ include('menu.php');
 <div id="TRESC">
 <?php
 	session_start();
-	if(isset($czego) && isset($dane)){
 	$id_klienta=$_SESSION['id_klienta'];
 	$wartosc=$_POST['wartosc'];
 	$czego=$_POST['czego'];
+	if(isset($czego) && isset($wartosc)){
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 	if($czego=='kategoria')
@@ -56,6 +56,7 @@ include('menu.php');
 	}
 	else{
 		header('location:wyszukaj_produkt.php');
+	
 		};
 ?>
 <!-- DIV Z TESCIA -->

@@ -1,4 +1,4 @@
-<?php include('sprawdz_pracownika.php'); ?>
+
 <html>
 	<head>
 	<meta charset="utf-8">

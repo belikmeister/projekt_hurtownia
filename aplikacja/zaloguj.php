@@ -39,12 +39,12 @@ else{
 			$odpowiedz->free_result();
 			header('Location: main.php');
 			unset($_SESSION['blad']);
-			
-			
+					
 		}	else
 		{
 			$_SESSION['blad']='<span style="color:red"> Nieprawidłowy login lub hasło!</span>';
 			header('Location: index.php');
+			
 		}
 		
 	}

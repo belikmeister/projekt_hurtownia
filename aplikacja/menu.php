@@ -29,7 +29,7 @@ echo"<a href=main.php><div id='NAGLOWEK'><img src='images/logo.png' class=srodek
 			  <li><a href='#'>INNE</a>
 			  <ul>
 						<li><a href='wyszukaj_produkt.php'>Wyszukaj produkt</a></li>
-						<li><a href='#'>Edytuj dane osobowe</a></li>
+						<li><a href='edytuj_dane_osobowe.php'>Edytuj dane osobowe</a></li>
 					</ul>
 			  </li>
 		</ol></div></br>";

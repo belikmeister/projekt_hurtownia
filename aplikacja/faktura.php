@@ -1,47 +1,226 @@
-<?php
-require('fpdf/fpdf.php');
-class PDF extends FPDF
+ 
+class faktura extends FPDF {
+ 
+function sizeOfText( $texte, $largeur )
 {
-// Page header
-function Header()
+    $index    = 0;
+    $nb_lines = 0;
+    $loop     = TRUE;
+    while ( $loop )
+    {
+        $pos = strpos($texte, "\n");
+        if (!$pos)
+        {
+            $loop  = FALSE;
+            $ligne = $texte;
+        }
+        else
+        {
+            $ligne  = substr( $texte, $index, $pos);
+            $texte = substr( $texte, $pos+1 );
+        }
+        $length = floor( $this->GetStringWidth( $ligne ) );
+        $res = 1 + floor( $length / $largeur) ;
+        $nb_lines += $res;
+    }
+    return $nb_lines;
+}   
+ 
+    function addSociete( $nom, $adresse )
 {
-    // Logo
-    $this->Image('images/logo.png',10,6,30);
-    // Arial bold 15
-    $this->SetFont('Arial','B',15);
-    // Move to the right
-    $this->Cell(80);
-    // Title
-    $this->Cell(40,10,'Faktura VAT',1,0,'C');
-    // Line break
-    $this->Ln(20);
+    $x1 = 15;
+    $y1 = 20;
+    $this->SetXY( $x1, $y1 );
+    $this->SetFont('arial_ce','B',10);
+    $length = $this->GetStringWidth( $nom );
+    $this->Cell( $length, 2, $nom);
+    $this->SetXY( $x1, $y1 + 4 );
+    $this->SetFont('arial_ce','',8);
+    $length = $this->GetStringWidth( $adresse );
+    $lignes = $this->sizeOfText( $adresse, $length) ;
+    $this->MultiCell($length, 4, $adresse);
 }
-
-// Page footer
-function Footer()
-{
-    // Position at 1.5 cm from bottom
-    $this->SetY(-15);
-    // Arial italic 8
-    $this->SetFont('Arial','I',8);
-    // Page number
-    $this->Cell(0,10,'Strona '.$this->PageNo().'/{nb}',0,0,'C');
+ 
+    private $PG_W = 190;
+ 
+    public function __construct($passInYourDataHere = NULL) {
+        parent::__construct();
+        $this->Ln();
+        $this->Ln();
+        $this->LineItems();     
+    }
+ 
+    public function Header() {
+ 
+        $this->AddFont('arial_ce','','arial_ce.php');
+        $this->AddFont('arial_ce','I','arial_ce_i.php');
+        $this->AddFont('arial_ce','B','arial_ce_b.php');
+        $this->AddFont('arial_ce','BI','arial_ce_bi.php');
+ 
+        $this->SetFont('arial_ce', 'B', 14);
+        $this->Cell($this->PG_W, 8, "FAKTURA VAT Nr xxx", 0, 0, 'C');
+        $this->Ln();
+ 
+        $this->SetFont('arial_ce', 'B', 10);
+        $this->Cell($this->PG_W, 5, "ORYGINAŁ", 0, 0, 'R');
+        $this->Ln();
+        $this->SetFont('arial_ce', 'B', 8);
+        $this->Cell($this->PG_W / 4, 5,"", 0, 0, 'R');
+        $this->Cell($this->PG_W / 4, 5,"", 0, 0, 'R');
+        $this->Cell($this->PG_W / 4, 5,"", 0, 0, 'R');
+        $this->Cell($this->PG_W / 4, 5, "Data wystawienia: ".date("d/m/Y", time()), 0, 0, 'R');
+        //$this->Cell($this->PG_W / 2, 5, date("d/m/Y", time()), 0, 0, 'R');
+        $this->Ln();
+        $this->Ln();
+        $this->Ln();    
+ 
+        $this->Cell($this->PG_W / 5, 5,"", 0, 0, 'R');
+        $this->Cell($this->PG_W / 5, 5,"", 0, 0, 'R');
+        $this->Cell($this->PG_W / 5, 5,"", 0, 0, 'R');
+        $this->Cell($this->PG_W / 5, 5,"Nabywca: ", 0, 0, 'R');
+ 
+        $this->SetFont('arial_ce', '', 9);
+ 
+        $this->MultiCell($this->PG_W / 5, 5, "imie nazwisko\nadres\nnip", 0, 'L');
+ 
+        //$this->MultiCell($this->PG_W / 5, 5, $tekst."1 Some Road\nSome Town\nPost Code", 0, 'L');
+        $this->Ln();
+        $this->Ln();
+ 
+        $this->SetFont('arial_ce', 'B', 11);
+        $this->addSociete( "Nazwa firmy",
+                "ADRES\n" .
+                "ADRES\n".
+                "ADRES\n".
+                "NIP: xxxxxxxxx\n".
+                "REGON: xxxxxxxx");
+        $this->Ln();
+        $this->Ln();          
+        $this->Ln(10);
+    }
+ 
+    public function LineItems() {
+        $this->AddFont('arial_ce','','arial_ce.php');
+        $this->AddFont('arial_ce','I','arial_ce_i.php');
+        $this->AddFont('arial_ce','B','arial_ce_b.php');
+        $this->AddFont('arial_ce','BI','arial_ce_bi.php');
+ 
+        $header = array("Nazwa towaru lub usługi", "Ilość", "Cena jednostkowa netto", "Wartość netto", "VAT", "Wartość brutto");
+ 
+        // Data
+ 
+        $textWrap = str_repeat("this is a word wrap test ", 3);
+        $textNoWrap = "there will be no wrapping here thank you";
+ 
+        $data = array();
+ 
+        $data[] = array($textWrap, 1, 50, 50, 0, 50);
+        $data[] = array($textNoWrap, 1, 10500, 10500, 0, 10500);
+        $data[] = array($textWrap, 1, 50, 50, 0, 50);
+        $data[] = array($textNoWrap, 1, 10500, 10500, 0, 10500);
+ 
+        /* Layout */
+ 
+        $this->SetFont('arial_ce', 'B', 8);
+        $this->AddPage();
+ 
+        // Headers and widths
+ 
+        $w = array(65, 15, 35, 25, 15, 25);
+ 
+        for($i = 0; $i < count($header); $i++) {
+        //$this->MultiCell($w[$i], 10, $header[$i], 1, 'C');
+        $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C');
+        }
+ 
+        $this->Ln();
+ 
+        // Mark start coords
+        $this->SetFont('arial_ce', '', 8);
+        $x = $this->GetX();
+        $y = $this->GetY();
+        $i = 0;
+ 
+        foreach($data as $row)
+        {   
+            $y1 = $this->GetY();
+            $this->MultiCell($w[0], 6, $row[0], 'LRB'); 
+            $y2 = $this->GetY();
+            $yH = $y2 - $y1;
+ 
+            $this->SetXY($x + $w[0], $this->GetY() - $yH);
+ 
+            $this->Cell($w[1], $yH, $row[1], 'LRB');
+            $this->Cell($w[2], $yH, number_format($row[2], 2), 'LRB', 0, 'R');
+            $this->Cell($w[3], $yH, number_format($row[3], 2), 'LRB', 0, 'R');
+            $this->Cell($w[4], $yH, number_format($row[4], 2), 'LRB', 0, 'R');
+            $this->Cell($w[5], $yH, number_format($row[5], 2), 'LRB', 0, 'R');
+ 
+            $this->Ln();
+ 
+            $i++;
+        }
+ 
+        $this->Ln();
+ 
+        $this->setTextFont();
+        $this->Cell($w[0] + $w[1], 6, 'SUMA', 'TB', 0, 'L');
+        $this->SetFont('arial_ce', '', 8);
+        $this->Cell($w[2], 6, number_format(2, 2), 'TB', 0, 'R');
+        $this->Cell($w[3], 6, number_format(2, 2), 'TB', 0, 'R');
+        $this->Cell($w[4], 6, number_format(2, 2), 'TB', 0, 'R');
+        $this->Cell($w[5], 6, number_format(2, 2), 'TB', 0, 'R');
+        $this->Ln();
+ 
+        $this->setTextFont();
+        $this->Ln();
+        $this->Ln();
+        $this->SetFont('arial_ce', 'B', 10);
+        $this->Cell($this->PG_W / 4, 5,"Do zapłaty: ", 'B', 0, 'L');
+        $this->Ln(10);  
+ 
+        $this->Ln();
+        $this->Ln();
+        $this->Ln();
+        $this->Ln();
+        $this->SetFont('arial_ce', '', 8);
+        $this->Cell($this->PG_W / 3, 5,"Osoba upoważniona do wystawienia faktury", 'T', 0, 'L');
+        $this->Cell($this->PG_W / 3, 5,"", 0, 0, 'L');
+        $this->Cell($this->PG_W / 3, 5,"Osoba upoważniona do odbioru faktury", 'T', 0, 'L');
+        $this->Ln(10);  
+    }
+ 
+    public function Footer() {
+ 
+        // Footer address
+ 
+        $address = "www\nfirma\nadres\nadres\n";
+ 
+        $this->SetY(-(($this->getAddressLength($address) * 5) + 20));
+ 
+        $this->SetFont('arial_ce', '', 7);
+ 
+        $this->Ln();
+        $this->writeAddress($address);
+    }
+ 
+    private function setTextFont($isBold = false) {
+        $this->SetFont('arial_ce', $isBold ? 'B' : '', 9);
+    }
+ 
+    private function setDataFont($isBold = false) {
+        $this->SetFont('Courier', $isBold ? 'B' : '', 8);
+    }
+ 
+    private function getAddressLength($address) {
+        return count(explode("\n", $address));
+    }
+ 
+    private function writeAddress($address) {
+        $lines = explode("\n", $address);
+        foreach ($lines as $line) {
+            $this->Cell($this->PG_W, 5, $line, 0, 0, 'C');
+            $this->Ln(4);
+        }
+    }   
 }
-}
-
-// Instanciation of inherited class
-$pdf = new PDF();
-$pdf->AliasNbPages();
-$pdf->AddPage();
-$pdf->SetFont('Times','',12);
-	session_start();
-	$id_klienta=$_SESSION['id_klienta'];
-	require_once"connect.php";
-	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-	$dane="SELECT * from zamowienie where id_klienta=".$id_klienta."";
-	$odpowiedz=$polaczenie->query($dane);
-		while($wiersz=$odpowiedz->fetch_assoc())
-    $pdf->Cell(0,10,$wiersz['miasto'],0,1);
-
-$pdf->Output();
-?>

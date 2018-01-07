@@ -50,6 +50,7 @@ id_produktu int not null,
 nazwa varchar(40),
 kategoria enum('monitory', 'hardware', 'obudowy', 'akcesoria'),
 id_dostawcy int not null,
+popularnosc int default 0;
 CONSTRAINT bp_pk PRIMARY KEY(id_produktu),
 CONSTRAINT bp_fk1 FOREIGN KEY(id_produktu) REFERENCES magazyn(id_produktu),
 CONSTRAINT bp_fk2 FOREIGN KEY(id_dostawcy) REFERENCES dostawcy(id_dostawcy)

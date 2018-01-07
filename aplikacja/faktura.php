@@ -50,54 +50,7 @@ function sizeOfText( $texte, $largeur )
         $this->LineItems();     
     }
  
-    public function Header() {
- 
-        $this->AddFont('arial_ce','','arial_ce.php');
-        $this->AddFont('arial_ce','I','arial_ce_i.php');
-        $this->AddFont('arial_ce','B','arial_ce_b.php');
-        $this->AddFont('arial_ce','BI','arial_ce_bi.php');
- 
-        $this->SetFont('arial_ce', 'B', 14);
-        $this->Cell($this->PG_W, 8, "FAKTURA VAT Nr xxx", 0, 0, 'C');
-        $this->Ln();
- 
-        $this->SetFont('arial_ce', 'B', 10);
-        $this->Cell($this->PG_W, 5, "ORYGINAŁ", 0, 0, 'R');
-        $this->Ln();
-        $this->SetFont('arial_ce', 'B', 8);
-        $this->Cell($this->PG_W / 4, 5,"", 0, 0, 'R');
-        $this->Cell($this->PG_W / 4, 5,"", 0, 0, 'R');
-        $this->Cell($this->PG_W / 4, 5,"", 0, 0, 'R');
-        $this->Cell($this->PG_W / 4, 5, "Data wystawienia: ".date("d/m/Y", time()), 0, 0, 'R');
-        //$this->Cell($this->PG_W / 2, 5, date("d/m/Y", time()), 0, 0, 'R');
-        $this->Ln();
-        $this->Ln();
-        $this->Ln();    
- 
-        $this->Cell($this->PG_W / 5, 5,"", 0, 0, 'R');
-        $this->Cell($this->PG_W / 5, 5,"", 0, 0, 'R');
-        $this->Cell($this->PG_W / 5, 5,"", 0, 0, 'R');
-        $this->Cell($this->PG_W / 5, 5,"Nabywca: ", 0, 0, 'R');
- 
-        $this->SetFont('arial_ce', '', 9);
- 
-        $this->MultiCell($this->PG_W / 5, 5, "imie nazwisko\nadres\nnip", 0, 'L');
- 
-        //$this->MultiCell($this->PG_W / 5, 5, $tekst."1 Some Road\nSome Town\nPost Code", 0, 'L');
-        $this->Ln();
-        $this->Ln();
- 
-        $this->SetFont('arial_ce', 'B', 11);
-        $this->addSociete( "Nazwa firmy",
-                "ADRES\n" .
-                "ADRES\n".
-                "ADRES\n".
-                "NIP: xxxxxxxxx\n".
-                "REGON: xxxxxxxx");
-        $this->Ln();
-        $this->Ln();          
-        $this->Ln(10);
-    }
+    
  
     public function LineItems() {
         $this->AddFont('arial_ce','','arial_ce.php');
@@ -141,25 +94,7 @@ function sizeOfText( $texte, $largeur )
         $y = $this->GetY();
         $i = 0;
  
-        foreach($data as $row)
-        {   
-            $y1 = $this->GetY();
-            $this->MultiCell($w[0], 6, $row[0], 'LRB'); 
-            $y2 = $this->GetY();
-            $yH = $y2 - $y1;
- 
-            $this->SetXY($x + $w[0], $this->GetY() - $yH);
- 
-            $this->Cell($w[1], $yH, $row[1], 'LRB');
-            $this->Cell($w[2], $yH, number_format($row[2], 2), 'LRB', 0, 'R');
-            $this->Cell($w[3], $yH, number_format($row[3], 2), 'LRB', 0, 'R');
-            $this->Cell($w[4], $yH, number_format($row[4], 2), 'LRB', 0, 'R');
-            $this->Cell($w[5], $yH, number_format($row[5], 2), 'LRB', 0, 'R');
- 
-            $this->Ln();
- 
-            $i++;
-        }
+
  
         $this->Ln();
  

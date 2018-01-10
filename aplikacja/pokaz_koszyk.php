@@ -50,7 +50,7 @@ if(!isset($_SESSION['koszyk']))
 		}
 		//echo $id." ".$ilosc;
 		
-		$dane="SELECT nazwa,cena from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu where magazyn.id_produktu=".$id."";
+		$dane="SELECT nazwa,cena,ilosc from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu where magazyn.id_produktu=".$id."";
 		$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
@@ -60,7 +60,7 @@ if(!isset($_SESSION['koszyk']))
 			 "<div class=wpis>".
 			 "<div class=nazwa>".$wiersz['nazwa']."</div>".
 			 "<div class=cena>".$wiersz['cena']."</div>".
-			 "<div class=ilosc>".$ilosc."</div>".
+			 "<div class=ilosc> <input type=number min=1 max=".$wiersz['ilosc']." value=".$ilosc." class=waski name=aktualna_ilosc></input></div>".
 			 "<div class=ilosc>".$suma."</div>".
 			 "<div class=koszyk><input type='submit' value='Usuń' /></div></div>";}
 		

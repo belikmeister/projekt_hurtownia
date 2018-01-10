@@ -16,19 +16,23 @@ include('menu.php');
 ?>
 
 <?php
-echo"SKURWESYŃSKO WYJEBANE ZESTAWIENIA SZMATO!";
+echo"ZESTAWIENIA Kapitana Bomby<br>";
 ?>
 
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-	$dane="SELECT id_produktu, nazwa, kategoria, popularnosc FROM baza_produktow ORDER BY popularnosc DESC";
+	$dane="SELECT id_produktu, nazwa, kategoria, popularnosc FROM baza_produktow ORDER BY popularnosc DESC LIMIT 5";
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
-			echo 
-			 $wiersz['id_produktu'];
-			 $wiersz['nazwa'];
-			 $wiersz['kategoria'];
+			echo $wiersz['id_produktu'];
+			echo "<br>";
+			echo $wiersz['nazwa'];
+			echo "<br>";
+			echo $wiersz['kategoria'];
+			echo "<br>";
+			echo $wiersz['popularnosc'];
+			echo "<br>";
 		}
 ?>

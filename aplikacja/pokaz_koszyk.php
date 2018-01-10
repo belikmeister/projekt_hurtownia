@@ -29,6 +29,8 @@ if(!isset($_SESSION['koszyk']))
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$kwota=0;
 	$rozmiar= count($_SESSION['koszyk']);
 	for($i=0;$i<$rozmiar;$i++)

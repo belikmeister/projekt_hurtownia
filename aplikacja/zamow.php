@@ -22,6 +22,7 @@ $polaczenie->query($dane);
 		$odpowiedz=$polaczenie->query($dane);
 		$wiersz=$odpowiedz->fetch_assoc();
 		$dane="INSERT INTO dane_zamowienia(id_produktu,id_zamowienia,ilosc_zamowionych) VALUES(".$id.", ".$wiersz['id_zamowienia'].", ".$ilosc.");";
+		$dane="UPDATE baza_produktow SET popularnosc=popularnosc+".$ilosc." WHERE id_produktu=".$id.";";
 		$polaczenie->query($dane);
 	}
 unset($_SESSION['koszyk']);

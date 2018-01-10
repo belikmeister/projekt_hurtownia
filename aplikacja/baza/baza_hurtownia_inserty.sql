@@ -50,7 +50,7 @@ id_produktu int not null,
 nazwa varchar(40),
 kategoria enum('monitory', 'hardware', 'obudowy', 'akcesoria'),
 id_dostawcy int not null,
-popularnosc int default 0;
+popularnosc int default 0,
 CONSTRAINT bp_pk PRIMARY KEY(id_produktu),
 CONSTRAINT bp_fk1 FOREIGN KEY(id_produktu) REFERENCES magazyn(id_produktu),
 CONSTRAINT bp_fk2 FOREIGN KEY(id_dostawcy) REFERENCES dostawcy(id_dostawcy)
@@ -100,16 +100,16 @@ INSERT INTO magazyn VALUES(8, 365.99, 42);
 INSERT INTO magazyn VALUES(9, 99.85, 30);
 INSERT INTO magazyn VALUES(10, 100.23, 18);
 
-INSERT INTO baza_produktow VALUES(1, 'LG G21', 'monitory', 1);
-INSERT INTO baza_produktow VALUES(2, 'GOODRAM BR12 DDR3', 'hardware', 2);
-INSERT INTO baza_produktow VALUES(3, 'INTEL i3 4500K', 'hardware', 1);
-INSERT INTO baza_produktow VALUES(4, 'HUB USB X3', 'akcesoria', 3);
-INSERT INTO baza_produktow VALUES(5, 'Karta sieciowa LAN', 'akcesoria', 2);
-INSERT INTO baza_produktow VALUES(6, 'EZIO Z450 27"', 'monitory', 3);
-INSERT INTO baza_produktow VALUES(7, 'GeForce GTX1080', 'hardware', 1);
-INSERT INTO baza_produktow VALUES(8, 'AMD FX434', 'hardware', 1);
-INSERT INTO baza_produktow VALUES(9, 'Obudowa Aerocool Q34', 'akcesoria', 1);
-INSERT INTO baza_produktow VALUES(10, 'Klawiatura Corsair Strafe', 'akcesoria', 3);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(1, 'LG G21', 'monitory', 1);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(2, 'GOODRAM BR12 DDR3', 'hardware', 2);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(3, 'INTEL i3 4500K', 'hardware', 1);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(4, 'HUB USB X3', 'akcesoria', 3);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(5, 'Karta sieciowa LAN', 'akcesoria', 2);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(6, 'EZIO Z450 27"', 'monitory', 3);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(7, 'GeForce GTX1080', 'hardware', 1);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(8, 'AMD FX434', 'hardware', 1);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(9, 'Obudowa Aerocool Q34', 'akcesoria', 1);
+INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(10, 'Klawiatura Corsair Strafe', 'akcesoria', 3);
 
 
 

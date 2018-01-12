@@ -15,9 +15,10 @@
 include('menu.php');
 ?>
 
-<?php
-echo"ZESTAWIENIA Kapitana Bomby<br>";
-?>
+
+<center><h1><i>TOP 5 NAJCZĘŚCIEJ KUPOWANYCH PRODUKTÓW</h1></center><br><br></i>
+<div id="bar"><div class="zestawienia-id">ID</div><div class="zestawienia-nazwa">NAZWA</div><div class="zestawienia-kategoria">KATEGORIA</div><div class="zestawienia-popularnosc">SPRZEDANYCH</div></div>
+
 
 <?php
 	require_once"connect.php";
@@ -26,13 +27,10 @@ echo"ZESTAWIENIA Kapitana Bomby<br>";
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
-			echo $wiersz['id_produktu'];
-			echo "<br>";
-			echo $wiersz['nazwa'];
-			echo "<br>";
-			echo $wiersz['kategoria'];
-			echo "<br>";
-			echo $wiersz['popularnosc'];
-			echo "<br>";
+			echo "<div class=wpis><div class=zestawienia-id-wpis>". $wiersz['id_produktu']."</div>";
+			echo "<div class=zestawienia-nazwa-wpis>".$wiersz['nazwa']."</div>";
+			echo "<div class=zestawienia-kategoria-wpis>".$wiersz['kategoria']."</div>";
+			echo "<div class=zestawienia-popularnosc-wpis>".$wiersz['popularnosc']."</div>";
+			echo "</div>";
 		}
 ?>

@@ -378,3 +378,79 @@ width:300px;
 {
 	width:80px;
 }
+
+.zestawienia-id
+{
+	
+	width: 10%;
+	border: 2px solid #666666;
+	text-align: center;
+	float:left;
+}
+
+.zestawienia-nazwa
+{
+	
+	width: 38%;
+	border: 2px solid #666666;
+	text-align: center;
+	float:left;
+}
+
+.zestawienia-kategoria
+{
+	
+	width: 30%;
+	border: 2px solid #666666;
+	text-align: center;
+	float:left;
+}
+
+.zestawienia-popularnosc
+{
+	
+	width: 20%;
+	border: 2px solid #666666;
+	text-align: center;
+	float:left;
+}
+
+.zestawienia-id-wpis
+{
+	
+	width: 10%;
+	border: 2px solid #666666;
+	text-align: center;
+	margin-top:6px;
+	float:left;
+}
+
+.zestawienia-nazwa-wpis
+{
+	
+	width: 38%;
+	border: 2px solid #666666;
+	text-align: center;
+	margin-top:6px;
+	float:left;
+}
+
+.zestawienia-kategoria-wpis
+{
+	
+	width: 30%;
+	border: 2px solid #666666;
+	text-align: center;
+	margin-top:6px;
+	float:left;
+}
+
+.zestawienia-popularnosc-wpis
+{
+	
+	width: 20%;
+	border: 2px solid #666666;
+	text-align: center;
+	margin-top:6px;
+	float:left;
+}

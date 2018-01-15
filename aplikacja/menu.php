@@ -5,7 +5,7 @@ echo"<a href=main.php><div id='NAGLOWEK'><img src='images/logo.png' class=srodek
 		  <ol>
 			  <li><a href='#'>MAGAZYN</a>
 			  <ul>
-						<li><a href='#'>Zamów towar</a></li>
+						<li><a href='zamow_towar_magazyn.php'>Zamów towar</a></li>
 						<li><a href='sprawdz_stan_magazynu.php'>Sprawdź stan</a></li>
 						<li><a href='zmien_stan_zamowienia.php'>Realizuj zamówienie</a></li>
 					</ul>

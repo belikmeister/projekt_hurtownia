@@ -14,6 +14,7 @@
 include('menu.php');
 ?></div>
 <div id="TRESC">
+<h1>Twoje dane</h1>
 <?php
 session_start();
 require_once"connect.php";
@@ -43,14 +44,37 @@ require_once"connect.php";
  ?>
  
  <form action=zmien_dane.php method=post>
-<div>Podaj nowe dane (musisz uzupełnić wszystkie pola)<br>
-<div>Imię<input type=text id=imie></input><br><div>
-<div>Nazwisko <input type=text id=nazwisko></input><br>
-<div>Ulica  <input type=text id=ulica></input><br>
-<div>Miasto   <input type=text id=miasto></input><br>
-<div>Kod <input type=text id=kod></input><br>
-<div>Telefon <input type=text id=tel></input><br>
-<div>NIP<input type=text id=nip></input><br>
-</div>
+
+<h1>Edytuj Dane</h1>
+
+Podaj nowe dane (musisz uzupełnić wszystkie pola!)<br>
+<table align="center">
+<tr>
+<td>Imię</td><td><input type=text id=imie></input></td>
+</tr>
+<td>Nazwisko</td><td> <input type=text id=nazwisko></input></td>
+</tr>
+
+<td>Ulica</td><td>  <input type=text id=ulica></input></td>
+</tr>
+
+<td>Miasto</td><td>   <input type=text id=miasto></input></td>
+</tr>
+
+<td>Kod</td><td> <input type=text id=kod></input></td>
+</tr>
+
+<td>Telefon </td><td><input type=text id=tel></input></td>
+</tr>
+
+<td>NIP</td><td><input type=text id=nip></input><br></td>
+</tr>
+<td></td><td> <input type=submit value="Zapisz"></td>
+</tr>
+
+</table>
+
+
+
 </body>
 </html>

@@ -16,7 +16,10 @@ include('menu.php');
 <div id="TRESC">
 <h1>Twoje dane</h1>
 <?php
-session_start();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
 require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 	$polaczenie -> query ('SET NAMES utf8');

@@ -13,9 +13,7 @@ echo"<a href=main.php><div id='NAGLOWEK'><img src='images/logo.png' class=srodek
 			  <li><a href=''>FAKTURY/ZESTAWIENIA</a>
 			  <ul>
 						<li><a href='#'>Generuj fakturę</a></li>
-						<li><a href='#'>Wyślij  fakturę na email</a></li>
 						<li><a href='#'>Generuj zestawienie</a></li>
-						<li><a href='#'>Pobierz fakturę</a></li>
 					</ul>
 			  </li>
 			  <li><a href=''>INNE</a>

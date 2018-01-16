@@ -14,7 +14,7 @@ $polaczenie->query($dane);
 				$id=$_SESSION['koszyk'][$i][$s];
 			}
 			if($s==1)
-			{
+			{	
 				$ilosc=$_SESSION['koszyk'][$i][$s];
 			}	
 		}

@@ -13,6 +13,9 @@
 	<?php
 include('menu.php');
 ?></div>
+<div id="bar"> 
+	<div class="r15procenta"><b>ID Zamówienia</b></div> <div class="r15procenta"><b>ID Klienta</b></div> <div class="r15procenta"><b>Data zamówienia</b></div> <div class="r17procenta"><b>Status</b></div> <div class="r17procenta"><b>Kwota</b></div><div class="r15procenta"><b>***</b></div>
+</div>
 <div id="TRESC">
 <?php
 	$id_klienta=$_SESSION['id_klienta'];

@@ -37,6 +37,9 @@ if(!isset($_SESSION['koszyk']))
 	{
 		for($s=0;$s<=1;$s++)
 		{
+			if(!isset($_SESSION['koszyk'][$i][$s]))
+			{goto a;}
+			
 			if($s==0)
 			{
 				$id=$_SESSION['koszyk'][$i][$s];
@@ -45,12 +48,13 @@ if(!isset($_SESSION['koszyk']))
 			{
 				$ilosc=$_SESSION['koszyk'][$i][$s];
 			}
+			
 			//echo $_SESSION['koszyk'][$i][$s]." ";
 			
 		}
 		//echo $id." ".$ilosc;
 		
-		$dane="SELECT nazwa,cena,ilosc from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu where magazyn.id_produktu=".$id."";
+		$dane="SELECT nazwa,cena,ilosc,baza_produktow.id_produktu from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu where magazyn.id_produktu=".$id."";
 		$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
@@ -60,11 +64,12 @@ if(!isset($_SESSION['koszyk']))
 			 "<div class=wpis>".
 			 "<div class=nazwa>".$wiersz['nazwa']."</div>".
 			 "<div class=cena>".$wiersz['cena']."</div>".
-			 "<div class=ilosc> <input type=number min=1 max=".$wiersz['ilosc']." value=".$ilosc." class=waski name=aktualna_ilosc></input></div>".
+			 "<div class=ilosc> ".$ilosc."</div>".
 			 "<div class=ilosc>".$suma."</div>".
-			 "<div class=koszyk><input type='submit' value='Usuń' /></div></div>";}
+			 "<form action=kasuj_produkt.php method=post><input name=id_prod type=hidden value=".$i."></input><div class=koszyk><input type='submit' value='Usuń' /></form></div></div>";}
 		
 		echo "<br>";
+		a:
 	}
 	echo "Łączna wartość produktów w koszyku: ".$kwota."zł";
 	$_SESSION['kwota']=$kwota;

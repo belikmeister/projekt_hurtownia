@@ -211,49 +211,43 @@ Micha³ W¹cha³a \\
 \paragraph{Definition of Done.} Pracownik mo¿e dowolnie zmieniaæ stany zamówieñ wyœwietlonych na liœcie.
 
 \subsection{Backlog Item 11}
-\paragraph{Tytu³ zadania.} Zamówienie towaru do magazynu.
-\paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu pozwalaj¹cego wygenerowaæ i wys³aæ mailem zamówienie do dostawcy.
-\paragraph{Priorytet.} Bardzo Wa¿ne.
-\paragraph{Definition of Done.} Pracownik mo¿e z³o¿yæ zamówienie które zostanie automatycznie wys³ane na maila dostawcy.
-
-\subsection{Backlog Item 12}
 \paragraph{Tytu³ zadania.} Sprawdzenie stanu magazynu.
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu do pogdl¹du stanów magazynowych wszystkich produktów z uwzglêdnieniem kategorii produktów.
 \paragraph{Priorytet.} Bardzo Wa¿ne.
 \paragraph{Definition of Done.} Pracownik mo¿e sprawdzaæ stany magazynowe produktów.
 
 
-\subsection{Backlog Item 13}
-\paragraph{Tytu³ zadania.} Zestawienia
+\subsection{Backlog Item 12}
+\paragraph{Tytu³ zadania.} Zestawienia sprzeda¿y.
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu pozwalaj¹cego pracownikowi na podgl¹d zestawieñ sprzeda¿y.
 \paragraph{Priorytet.} Opcjonalne.
 \paragraph{Definition of Done.} Pracownik mo¿e podgl¹daæ zestawienia sprzeda¿y.
 
-\subsection{Backlog Item 14}
+\subsection{Backlog Item 13}
 \paragraph{Tytu³ zadania.} Pobieranie faktur.
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu pozwalaj¹cego pobraæ wygenerowan¹ wczeœniej fakturê.
-\paragraph{Priorytet.} Wa¿ne.
+\paragraph{Priorytet.} Opcjonalne.
 \paragraph{Definition of Done.} Klient mo¿e pobraæ fakturê po zalogowaniu do swojego konta.
 
-\subsection{Backlog Item 15}
+\subsection{Backlog Item 14}
 \paragraph{Tytu³ zadania.} Dodawanie i edycja danych osobowych.
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu pozwalaj¹cego klientowi dodaæ lub edytowaæ swoje dane osobowe.
 \paragraph{Priorytet.} Wa¿ne.
 \paragraph{Definition of Done.} Klient mo¿e dowolnie dodawaæ i zmieniaæ swoje dane osobowe.
 
-\subsection{Backlog Item 16}
+\subsection{Backlog Item 15}
 \paragraph{Tytu³ zadania.} Generowanie faktur.
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu generuj¹cego faktury z zamówieñ.
 \paragraph{Priorytet.} Opcjonalne.
 \paragraph{Definition of Done.} Pracownik mo¿e wygenerowaæ fakturê po zrealizowaniu zamówienia.
 
-\subsection{Backlog Item 17}
+\subsection{Backlog Item 16}
 \paragraph{Tytu³ zadania.} Faktura na email
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu wysy³aj¹cego fakturê na email klienta.
 \paragraph{Priorytet.} Opcjonalne.
 \paragraph{Definition of Done.} Klient otrzymuje faktury na email.
 
-\subsection{Backlog Item 18}
+\subsection{Backlog Item 17}
 \paragraph{Tytu³ zadania.} Edycja zamówienia z poziomu podgl¹du.
 \paragraph{Opis zadania.} Zaprojektowanie i wdro¿enie skryptu pozwalaj¹cego na edycjê zamówienia z poziomu podgl¹du.
 \paragraph{Priorytet.} Opcjonalne
@@ -270,7 +264,7 @@ Micha³ W¹cha³a \\
 \item Estymata: XL
 \end{itemize}
 
-\paragraph{Tytu³ zadania.} Logowanie.
+\paragraph{Tytu³ zadania.} Logowanie klienta.
 \begin{itemize}
 \item Estymata: XL
 \end{itemize}
@@ -309,7 +303,7 @@ Utworzony zosta³ skrypt uruchamiaj¹cy bazê danych, oraz skrypt testowy, zawieraj
 Wszystko zosta³o przes³ane do zdalnego repozytorium w za³¹czniku.
 Modyfikacji uleg³a tabela $"zamowienie"$, mianowicie doda³em dodatkowe pola o nazwach $"status"$ oraz $"data dostarczenia"$.
 
-\paragraph{Tytu³ zadania.} Logowanie.
+\paragraph{Tytu³ zadania.} Logowanie klienta.
 \subparagraph{Wykonawca.} Jakub Wêglarz.
 \subparagraph{Realizacja.} 
 Zaprojektowa³em interfejs oraz skrypt s³u¿¹cy do logowania, zaimplementowana zosta³a obs³uga zmiennych sesyjnych, pliki zosta³y zabezpieczone przed prób¹ obejœcia logowania a sam skrypt zaprogramowany w sposób uniemo¿liwiaj¹cy wykonanie iniekcji SQL czyli ataku polegaj¹cego na manipulacji znakami komentarza.
@@ -336,7 +330,7 @@ Wszystko zosta³o przes³ane do zdalnego repozytorium.
 
 
  
-\paragraph{Tytu³ zadania.} Skrypt koszyka
+\paragraph{Tytu³ zadania.} Podgl¹d zamówienia przed wys³aniem.
 \subparagraph{Wykonawca.} Jakub Wêglarz
 \subparagraph{Realizacja.} Skrypt koszyka korzysta ze zmiennych sesyjnych oraz danych przesy³anych na bie¿¹co tablic¹ globaln¹ $"\$\_POST"$.
 Dzia³anie skryptu jest wywo³ywane przez przekierowanie akcji z formularza zawartego w pliku\\ $wyswietl\_produkty.php$ przez klikniêcie przycisku $Dodaj$ $do$ $koszyka$.
@@ -386,7 +380,7 @@ Zaplanowany przyrost zosta³ osi¹gniêty, prezentacja przebieg³a pomyœlnie, wszyst
 	\item Estymata: M
 \end{itemize}
 
-\paragraph{Tytu³ zadania.} GUI.
+\paragraph{Tytu³ zadania.} Interfejs graficzny GUI.
 \begin{itemize}
 	\item Estymata: L
 \end{itemize}
@@ -422,11 +416,12 @@ Utworzony zosta³ plik \textbf{sprawdz stan magazynu.php} dziêki któremu pracowni
 Wyœwietlane s¹ dwie kolumny, pierwsza z nazw¹ produktu, druga natomiast z iloœci¹ która jest aktualnie dostêpna na magazynie. Wszystkie produkty s¹ kolejno ponumerowane.
 
 
-\paragraph{Tytu³ zadania.} GUI.
+\paragraph{Tytu³ zadania.} Interfejs graficzny GUI.
 \subparagraph{Wykonawca.} Micha³ W¹cha³a.
 \subparagraph{Realizacja.} Stworzy³em przyjemniejsze dla oka, lepiej funkcjonuj¹ce menu g³ówne w CSS'ie. Zajmuje ono mniej miejsca na stronie, opcje zawieraj¹ siê w wysuwanych przyciskach. 
 Poprawi³em tak¿e przycisk s³u¿¹cy do wylogowywania siê z aplikacji.
 Poprawi³em funkcjonalnoœæ aplikacji poprzez rozdzielenie opcji menu dla pracownika oraz dla klienta. Klient loguj¹c siê na swoje konto widzi tylko opcje które tylko on mo¿e wybraæ, podobnie jak pracownik. 
+
 \paragraph{Tytu³ zadania.} Generowanie Faktur.
 \subparagraph{Wykonawca.} Jakub Wêglarz.
 \subparagraph{Realizacja.} Zadanie przerzucone na nastêpny sprint z powodu zbyt du¿ej z³o¿onoœci.
@@ -491,42 +486,27 @@ Zadania zawarte w bie¿¹cym sprincie okaza³y siê zbyt obszerne. Uda³o siê wykonaæ
 	\item Estymata: XL
 \end{itemize}
 
-\paragraph{Tytu³ zadania.} Zamówienie towaru do magazynu.
-\begin{itemize}
-	\item Estymata: XL
-\end{itemize}
 
 \paragraph{Tytu³ zadania.} Generowanie faktur.
 \begin{itemize}
 	\item Estymata: XXL
 \end{itemize}
 
-\paragraph{Tytu³ zadania.} Faktura na email.
-\begin{itemize}
-	\item Estymata: XL
-\end{itemize}
 
 \paragraph{Tytu³ zadania.} Zestawienia sprzeda¿y.
 \begin{itemize}
 	\item Estymata: XXL
 \end{itemize}
 
-\paragraph{Tytu³ zadania.} Edycja z poziomu podgl¹du.
-\begin{itemize}
-	\item Estymata: XXL
-\end{itemize}
 
 
 \subsection{Realizacja}
 
 \paragraph{Tytu³ zadania.} Zestawienia sprzeda¿y
 \subparagraph{Wykonawca.} Micha³ W¹cha³a
-\subparagraph{Realizacja.} Utworzy³em w pe³ni dzia³aj¹cy skrypt PHP (zestawienia.php) wyœwietlaj¹cy zestawienia najczêœciej sprzedawanych produktów, tzw. "bestsellerów". Skrypt w czytelny sposób przy zastosowaniu kaskadowego arkusza danych, wyœwietla dane 5 najczêœciej kupowanych w naszej hurtowni produktów.
+\subparagraph{Realizacja.} Utworzy³em w pe³ni dzia³aj¹cy skrypt PHP (zestawienia.php) wyœwietlaj¹cy zestawienia najczêœciej sprzedawanych produktów, tzw. "bestsellerów". Skrypt w czytelny sposób przy zastosowaniu kaskadowego arkusza stylów, wyœwietla dane 5 najczêœciej kupowanych w naszej hurtowni produktów.
 
 
-\paragraph{Tytu³ zadania.} Edycja z poziomu podgl¹du.
-\subparagraph{Wykonawca.} Micha³ W¹cha³a
-\subparagraph{Realizacja.} Tworzê wstêpny skrypt pozwalaj¹cy na edycje zamówienia z poziomu podgl¹du koszyka.
 
 
 \paragraph{Tytu³ zadania.} Dodawanie i edycja danych osobowych
@@ -551,13 +531,7 @@ Zosta³a rozszerzona funkcjonalnoœæ aplikacji w postaci edycji danych osobowych k
 \subparagraph{Wykonawca.} Jakub Wêglarz
 \subparagraph{Realizacja.} Napisa³em w³asn¹ metodê pozwalaj¹c¹ na wyœwietlanie i drukowanie faktur.
 Klient ma dostêp tylko i wy³¹cznie do swoich dokumentów wiêc zostaje zachowana tajemnica handlowa, pracownik natomiast, z wiadomych wzglêdów - mo¿e przegl¹daæ dokumenty sprzeda¿y wszystkich klientów.
-
-
-\paragraph{Tytu³ zadania.} Zamówienie towaru do magazynu
-\subparagraph{Wykonawca.} £ukasz Wide³
-\subparagraph{Realizacja.} 
-Tworzê wstêpny skrypt do zamówienia towaru do magazynu...
-
+Faktury s¹ generowane w oparciu o dane wydobyte z bazy danych odpowiednio sformatowane i wyœwietlone przy u¿yciu mojej procedury.
 
 
 

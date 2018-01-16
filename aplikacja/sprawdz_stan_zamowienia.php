@@ -21,6 +21,8 @@
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 	$dane="SELECT id_zamowienia,id_klienta,data_zamowienia,status from zamowienie";
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{

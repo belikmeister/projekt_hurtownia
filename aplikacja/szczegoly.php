@@ -21,6 +21,8 @@ include('menu.php');
 	$id_klienta=$_SESSION['id_klienta'];
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$dane="SELECT imie,nazwisko,ulica,miasto,kod_pocztowy,telefon,nip from klienci where id_klienta=".$_SESSION['id_klienta'].";";
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
@@ -44,6 +46,8 @@ include('menu.php');
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 	$dane="SELECT dane_zamowienia.id_produktu,nazwa,ilosc_zamowionych,cena from zamowienie inner join dane_zamowienia on zamowienie.id_zamowienia=dane_zamowienia.id_zamowienia inner join baza_produktow on dane_zamowienia.id_produktu=baza_produktow.id_produktu inner join magazyn on baza_produktow.id_produktu=magazyn.id_produktu where zamowienie.id_zamowienia=dane_zamowienia.id_zamowienia AND zamowienie.id_zamowienia=".$nr.";";
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{

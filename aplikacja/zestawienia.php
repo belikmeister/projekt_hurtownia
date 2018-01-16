@@ -24,6 +24,8 @@ include('menu.php');
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 	$dane="SELECT id_produktu, nazwa, kategoria, popularnosc FROM baza_produktow ORDER BY popularnosc DESC LIMIT 5";
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{

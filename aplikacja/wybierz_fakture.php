@@ -13,12 +13,19 @@
 	<?php
 include('menu.php');
 ?></div>
+
 <div id="TRESC">
+
+<div id="bar"> 
+	<div class="r15procenta"><b>ID Zamówienia</b></div> <div class="r15procenta"><b>ID Klienta</b></div> <div class="r15procenta"><b>Data zamówienia</b></div> <div class="r17procenta"><b>Status</b></div> <div class="r17procenta"><b>Kwota</b></div><div class="r15procenta"><b>***</b></div>
+</div>
 <?php
 	$id_klienta=$_SESSION['id_klienta'];
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 	$dane="SELECT * from zamowienie";
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{

@@ -13,12 +13,15 @@
 	<body>
 <div id="top">
 </div>
+
 <div id="TRESC">
 <?php
 	$nr=$_POST['id'];
 	$id_klienta=$_SESSION['id_klienta'];
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$dane="SELECT imie,nazwisko,ulica,miasto,kod_pocztowy,telefon,nip from klienci where id_klienta=".$_SESSION['id_klienta'].";";
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())

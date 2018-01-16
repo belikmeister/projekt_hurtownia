@@ -22,6 +22,8 @@ include('menu.php');
 	if(isset($czego) && isset($wartosc)){
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+	$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	if($czego=='kategoria')
 	{$dane="SELECT magazyn.id_produktu,nazwa,cena,ilosc from baza_produktow inner join magazyn on baza_produktow.id_produktu=magazyn.id_produktu where baza_produktow.kategoria=".$wartosc.";";
 	

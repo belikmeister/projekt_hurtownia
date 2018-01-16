@@ -3,6 +3,8 @@ session_start();
 require_once"connect.php";
 $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
 $dane="INSERT INTO zamowienie(id_klienta,status,kwota) values('".$_SESSION['id_klienta']."','zamowione','".$_SESSION['kwota']."');";
+$polaczenie -> query ('SET NAMES utf8');
+	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 $polaczenie->query($dane);
 	$rozmiar= count($_SESSION['koszyk']);
 	for($i=0;$i<$rozmiar;$i++)

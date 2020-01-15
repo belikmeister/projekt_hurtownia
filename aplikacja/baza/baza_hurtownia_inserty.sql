@@ -76,6 +76,8 @@ CONSTRAINT dz_fk FOREIGN KEY(id_produktu) REFERENCES baza_produktow(id_produktu)
 CONSTRAINT dz_fk1 FOREIGN KEY(id_zamowienia) REFERENCES zamowienie(id_zamowienia)
 );
 
+
+
 use hurtownia;
 INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(1, 'Jurek', 'Owsiak', 'Wrzeciono', 'Warszawa', 23851, 446112113);
 INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(2, 'Pracownik', 'Czarek', 'Czarnobylska', 'Prypeć', 45956, 45847489);
@@ -111,5 +113,6 @@ INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(8, 'A
 INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(9, 'Obudowa Aerocool Q34', 'akcesoria', 1);
 INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(10, 'Klawiatura Corsair Strafe', 'akcesoria', 3);
 
+CREATE VIEW magazyn_widok AS SELECT * from magazyn;
 
-
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PokazZamowieniaKlienta`(IN `idzam` INT(5)) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER SELECT * FROM zamowienie where id_klienta=idzam

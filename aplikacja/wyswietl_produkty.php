@@ -29,7 +29,7 @@ if(isset($_SESSION['pusty_koszyk']))
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-	$dane="SELECT * from magazyn inner join baza_produktow on magazyn.id_produktu=baza_produktow.id_produktu ";
+	$dane="SELECT * from magazyn_widok inner join baza_produktow on magazyn_widok.id_produktu=baza_produktow.id_produktu;";
 	$polaczenie -> query ('SET NAMES utf8');
 	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$odpowiedz=$polaczenie->query($dane);

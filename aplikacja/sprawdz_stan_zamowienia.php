@@ -15,12 +15,12 @@
 </div>
 <div id="TRESC">
 <div id="bar"> 
-	<div class="nazwa">Numer Zamówienia</div> <div class="cena">ID Klienta</div> <div class="ilosc">Data zamówienia</div> <div class="ilosc">Aktualny stan</div>
+	<div class="r7procent">Zam.</div> <div class="r7procent">ID Klienta</div> <div class="r15procent">Data zamówienia</div> <div class="r15procent">Aktualny stan</div><div class="r15procent">Data zmiany</div>
 </div>
 <?php
 	require_once"connect.php";
 	$polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
-	$dane="SELECT id_zamowienia,id_klienta,data_zamowienia,status from zamowienie";
+	$dane="SELECT * from zamowienie";
 	$polaczenie -> query ('SET NAMES utf8');
 	$polaczenie -> query ('SET CHARACTER_SET utf8_unicode_ci');
 	$odpowiedz=$polaczenie->query($dane);
@@ -28,10 +28,11 @@
 		{
 			 echo 
 			 "<div class=wpis>".
-			 "<div class=nazwa>".$wiersz['id_zamowienia']."</div>".
-			 "<div class=cena>".$wiersz['id_klienta']."</div>".
-			 "<div class=ilosc>".$wiersz['data_zamowienia']."</div>".
-			 "<div class=ilosc>".$wiersz['status']."</div></div>";
+			 "<div class=r7procent>".$wiersz['id_zamowienia']."</div>".
+			 "<div class=r7procent>".$wiersz['id_klienta']."</div>".
+			 "<div class=r15procent>".$wiersz['data_zamowienia']."</div>".
+			 "<div class=r15procent>".$wiersz['status']."</div>".
+			 "<div class=r15procent>".$wiersz['data_zmiany']."</div></div>";
 		}
 ?>
 

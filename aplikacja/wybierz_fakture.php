@@ -17,7 +17,7 @@ include('menu.php');
 <div id="TRESC">
 
 <div id="bar"> 
-	<div class="r15procenta"><b>ID Zamówienia</b></div> <div class="r15procenta"><b>ID Klienta</b></div> <div class="r15procenta"><b>Data zamówienia</b></div> <div class="r17procenta"><b>Status</b></div> <div class="r17procenta"><b>Kwota</b></div><div class="r15procenta"><b>***</b></div>
+	<div class="r7procent"><b>Zam.</b></div> <div class="r7procent"><b>ID Kl.</b></div> <div class="r15procent"><b>Data zamówienia</b></div> <div class="r17procent"><b>Status</b></div> <div class="r17procent"><b>Kwota</b></div><div class="r15procent"><b>***</b></div>
 </div>
 <?php
 	$id_klienta=$_SESSION['id_klienta'];
@@ -32,13 +32,13 @@ include('menu.php');
 			echo "<form action='faktura.php' method=post>";
 			 echo 
 			 "<div class=wpis>".
-			 "<div class='r15procent'>".$wiersz['id_zamowienia']."</div>".
-			 "<div class=r15procent>".$wiersz['id_klienta']."</div>".
+			 "<div class='r7procent'>".$wiersz['id_zamowienia']."</div>".
+			 "<div class=r7procent>".$wiersz['id_klienta']."</div>".
 			 "<div class=r15procent>".$wiersz['data_zamowienia']."</div>".
 			 "<div class=r17procent>".$wiersz['status']."</div>".
 			 "<div class=r17procent>".$wiersz['kwota']."</div>".
-			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div>".
-			 "<div class=r15procent><input type=submit value='Wyświetl Fakturę'></div></div>";
+			 "<div class=r15procent><input type=submit value='Wyświetl Fakturę'></div>".
+			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div></div>";
 			 echo "</form>";
 		}
 ?>

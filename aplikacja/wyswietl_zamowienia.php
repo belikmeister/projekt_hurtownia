@@ -12,7 +12,8 @@
 <div id="top">
 	<?php
 include('menu.php');
-?></div>
+?>
+</div>
 <div id="TRESC">
 <?php
 	$id_klienta=$_SESSION['id_klienta'];
@@ -33,8 +34,8 @@ include('menu.php');
 			 "<div class=r15procent>".$wiersz['data_zamowienia']."</div>".
 			 "<div class=r17procent>".$wiersz['status']."</div>".
 			 "<div class=r17procent>".$wiersz['kwota']."</div>".
-			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div>".
-			 "<div class=r15procent><input type=submit value='Szczegóły'></div></div>";
+			 "<div class=r15procent><input type=submit value='Szczegóły'></div>".
+			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div></div>";
 			 echo "</form>";
 		}
 ?>

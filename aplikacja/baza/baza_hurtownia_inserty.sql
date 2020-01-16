@@ -60,6 +60,7 @@ CREATE TABLE zamowienie(
 id_zamowienia int not null AUTO_INCREMENT,
 id_klienta int not null,
 data_zamowienia TIMESTAMP,
+data_zmiany TIMESTAMP,
 status ENUM('zamowione', 'realizacja', 'wyslane'),
 kwota float,
 CONSTRAINT zm_pk PRIMARY KEY(id_zamowienia),
@@ -82,7 +83,7 @@ use hurtownia;
 INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(1, 'Jurek', 'Owsiak', 'Wrzeciono', 'Warszawa', 23851, 446112113);
 INSERT INTO klienci(id_klienta, imie, nazwisko, ulica, miasto, kod_pocztowy, telefon) VALUES(2, 'Pracownik', 'Czarek', 'Czarnobylska', 'Prypeć', 45956, 45847489);
 
-INSERT INTO pracownicy(id_pracownika, imie, nazwisko, adres) VALUES(1, 'Diho', 'Orangutan', 'Ty z ekipą ja sam z bronią');
+INSERT INTO pracownicy(id_pracownika, imie, nazwisko, adres) VALUES(1, 'Diho', 'Orangutan', 'Nowy Sącz, Kazimierza wielkiego 13');
 
 INSERT INTO logowanie(id_klienta, login_klienta, haslo_klienta, pracownik) VALUES(1, 'test', '202cb962ac59075b964b07152d234b70',0);
 INSERT INTO logowanie(id_klienta, login_klienta, haslo_klienta, pracownik) VALUES(2, 'pracownik', '202cb962ac59075b964b07152d234b70',1);
@@ -115,4 +116,7 @@ INSERT INTO baza_produktow(id_produktu,nazwa,kategoria,id_dostawcy) VALUES(10, '
 
 CREATE VIEW magazyn_widok AS SELECT * from magazyn;
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `PokazZamowieniaKlienta`(IN `idzam` INT(5)) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER SELECT * FROM zamowienie where id_klienta=idzam
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PokazZamowieniaKlienta`(IN `idzam` INT(5)) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER SELECT * FROM zamowienie where id_klienta=idzam;
+
+CREATE TRIGGER `STAN` BEFORE UPDATE ON `zamowienie` 
+FOR EACH ROW SET NEW.data_zmiany = CURRENT_TIMESTAMP;

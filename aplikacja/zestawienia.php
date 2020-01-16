@@ -29,7 +29,7 @@ include('menu.php');
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())
 		{
-			echo "<div class=wpis><div class=zestawienia-id-wpis>". $wiersz['id_produktu']."</div>";
+			echo "<div class=wpisnoborder><div class=zestawienia-id-wpis>". $wiersz['id_produktu']."</div>";
 			echo "<div class=zestawienia-nazwa-wpis>".$wiersz['nazwa']."</div>";
 			echo "<div class=zestawienia-kategoria-wpis>".$wiersz['kategoria']."</div>";
 			echo "<div class=zestawienia-popularnosc-wpis>".$wiersz['popularnosc']."</div>";

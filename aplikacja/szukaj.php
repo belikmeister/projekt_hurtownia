@@ -14,8 +14,10 @@
 include('menu.php');
 ?></div>
 <div id="TRESC">
+<div id="bar"> 
+	<div class="optionbar-nazwa">NAZWA</div> <div class="optionbar-cena">CENA(ZŁ/SZT)</div> <div class="optionbar-ilosc">ILOŚĆ</div> <div class="optionbar-ilosc">SZT</div> <div class="optionbar-koszyk">Dodaj do koszyka</div>
+</div>
 <?php
-	session_start();
 	$id_klienta=$_SESSION['id_klienta'];
 	$wartosc=$_POST['wartosc'];
 	$czego=$_POST['czego'];
@@ -40,6 +42,8 @@ include('menu.php');
 	
 	
 	}
+	
+	
 
 	$odpowiedz=$polaczenie->query($dane);
 		while($wiersz=$odpowiedz->fetch_assoc())

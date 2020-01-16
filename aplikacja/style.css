@@ -31,7 +31,7 @@ html, body {
 }
 
 #TRESC {
-	width: 1020px;
+	width: 1100px;
 	float: center;
 	overflow: hidden;
 	background-color: #fff;
@@ -50,7 +50,9 @@ ol
 	height: 40px;
 	line-height: 200%;
 	display: inline-block;
-	background-color: #666666;
+	border-radius: 20px;
+	background: rgb(104,130,255);
+	background: linear-gradient(0deg, rgba(104,130,255,0.6054796918767507) 0%, rgba(34,195,182,0.6755077030812324) 100%);
 	position:absolute;
 }
 
@@ -66,17 +68,21 @@ ol > li
 	float: left;
 	width: 253px;
 	height: 40px;
-	border-right: 1px dashed #ffffff;
+	border-right: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-radius: 20px;
 }
 
 ol > li:first-child
 {
-	border-left: 1px dashed #ffffff;
+	border-left: 1px solid #ffffff;
+	border-radius: 20px;
 }
 
 ol > li:hover
 {
-	background-color: #666688;
+	background: rgb(23,50,175);
+	background: linear-gradient(0deg, rgba(23,50,175,1) 0%, rgba(29,210,196,1) 100%);
 }
 
 ol > li:hover > a
@@ -100,15 +106,19 @@ ol > li:hover > ul
 
 ol > li > ul > li
 {
-	background-color:#666666;
+background: rgb(0,30,170);
+background: linear-gradient(0deg, rgba(0,30,170,1) 0%, rgba(0,210,194,1) 100%);
 	position: relative;
 	z-index: 100;
-	border-top: 1px dashed #ffffff;
+	border-radius: 20px;
+	border-top: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
 }
 
 ol > li > ul > li:hover
 {
-	background-color: #666688
+	background: rgb(23,50,175);
+	background: linear-gradient(0deg, rgba(23,50,175,1) 0%, rgba(29,210,196,1) 100%);
 }
 
 ol > li > ul > li:hover > a
@@ -117,8 +127,8 @@ ol > li > ul > li:hover > a
 }
 
 body {
-    background-image: url("images/tlo.png");
-	background-repeat: repeat-x
+background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,0.7679446778711485) 0%, rgba(34,137,195,1) 100%);
 }
 
 p.wciecie { 
@@ -163,6 +173,7 @@ img.aktualnosci {
     margin-right: auto;
 	float: center;
 	width:25%;
+	
 }
 
 
@@ -197,14 +208,32 @@ width:300px;
 
 #bar
 {
-	background-color: lightgrey;
-	width: 987px;
-	min-height:30px;
-	margin-left: auto;
-	margin-right: auto;
+	background-color: white;
 	text-align: center;
-	border: 2px solid #666666;
-	padding: 15px 10px 5px 20px;
+	border-width: 0;
+	padding: 5px;
+	display: inline-block;
+	width: 95%;
+	height:35px;
+}
+
+.wpis
+{
+	text-align: center;
+	border-width: 0;
+	padding: 5px;
+	display: inline-block;
+	width: 95%;
+	height:35px;
+}
+.wpisnoborder
+{
+	text-align: center;
+	border: none;
+	padding: 0px;
+	display: inline-block;
+	width: 96.5%;
+	height:25px;
 }
 
 .optionbar-nazwa
@@ -240,18 +269,6 @@ width:300px;
 	float:left;
 }
 
-
-.wpis
-{
-	width: 987px;
-	min-height:35px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: auto;
-	text-align: center;
-	border: 2px solid #666666;
-	padding: 5px 10px 5px 20px;
-}
 
 .pole
 {
@@ -308,21 +325,39 @@ width:300px;
 .r15procent
 {
 	width: 15%;
-	min-height:30px;
+	height:30px;
+	line-height: 30px;
 	border: 2px solid #666666;
 	text-align: center;
-	float:left;
-	padding: 2px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px;
+}
+.r7procent
+{
+	width: 7%;
+	height:30px;
+	line-height: 30px;
+	border: 2px solid #666666;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px;
 }
 
 .r17procent
 {
 	width: 17.5%;
-	min-height:30px;
+	height:30px;
+	line-height: 30px;
 	border: 2px solid #666666;
 	text-align: center;
-	float:left;
-	padding: 2px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 2px;
 }
 
 .danek
@@ -367,12 +402,14 @@ width:300px;
 	text-align: center;
 	color: white;
 	text-decoration: none;
-	background-color: #666666;
+	background: rgb(23,50,175);
+	background: linear-gradient(0deg, rgba(23,50,175,1) 0%, rgba(29,210,196,1) 100%);
 }
 
 #wyloguj:hover
 {
-	background-color: #666688;
+	background: rgb(23,50,175);
+	background: linear-gradient(0deg, rgba(23,50,200,1) 0%, rgba(20,210,250,1) 100%);
 }
 .waski
 {
@@ -417,7 +454,8 @@ width:300px;
 
 .zestawienia-id-wpis
 {
-	
+	border-left: none;
+	border-right: none;
 	width: 10%;
 	border: 2px solid #666666;
 	text-align: center;
@@ -427,7 +465,8 @@ width:300px;
 
 .zestawienia-nazwa-wpis
 {
-	
+	border-left: none;
+	border-right: none;
 	width: 38%;
 	border: 2px solid #666666;
 	text-align: center;
@@ -437,7 +476,8 @@ width:300px;
 
 .zestawienia-kategoria-wpis
 {
-	
+	border-left: none;
+	border-right: none;
 	width: 30%;
 	border: 2px solid #666666;
 	text-align: center;
@@ -447,7 +487,8 @@ width:300px;
 
 .zestawienia-popularnosc-wpis
 {
-	
+	border-left: none;
+	border-right: none;
 	width: 20%;
 	border: 2px solid #666666;
 	text-align: center;

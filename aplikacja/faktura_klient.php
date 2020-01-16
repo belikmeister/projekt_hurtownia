@@ -13,10 +13,11 @@
 	<?php
 include('menu.php');
 ?></div>
+<div id="TRESC">
 <div id="bar"> 
 	<div class="r15procenta"><b>ID Zamówienia</b></div> <div class="r15procenta"><b>ID Klienta</b></div> <div class="r15procenta"><b>Data zamówienia</b></div> <div class="r17procenta"><b>Status</b></div> <div class="r17procenta"><b>Kwota</b></div><div class="r15procenta"><b>***</b></div>
 </div>
-<div id="TRESC">
+
 <?php
 	$id_klienta=$_SESSION['id_klienta'];
 	require_once"connect.php";
@@ -35,8 +36,8 @@ include('menu.php');
 			 "<div class=r15procent>".$wiersz['data_zamowienia']."</div>".
 			 "<div class=r17procent>".$wiersz['status']."</div>".
 			 "<div class=r17procent>".$wiersz['kwota']."</div>".
-			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div>".
-			 "<div class=r15procent><input type=submit value='Wyświetl Fakturę'></div></div>";
+			 "<div class=r15procent><input type=submit value='Wyświetl Fakturę'></div></div>".
+			 "<div><input type=hidden name='id' value=".$wiersz['id_zamowienia']."></div>";
 			 echo "</form>";
 		}
 ?>

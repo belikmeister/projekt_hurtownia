@@ -32,15 +32,27 @@ margin-right: 40px;
 	border-spacing:0;
 	border: 2px solid;
 }
+td, th{
+	display: table-cell;
+	border:1px solid black;
+	text-align: center;
+}
+
+.schowaj{
+display: none;
+}
+
+.obraz200{
+	width:200px;
+	height:200px;
+	box-shadow: 8px 9px 15px 3px rgba(0,0,0,0.75);
+}
 
 
 
-
-
-
-html, body {
-	background-color: #fff;
-	color: #000;
+body {
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0.7679446778711485) 0%, rgba(34,137,195,1) 100%);
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -77,6 +89,8 @@ html, body {
 	background-color: #fff;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 30px;
+	margin-top: 30px;
 }
 
 
@@ -113,11 +127,7 @@ ol > li
 	border-radius: 20px;
 }
 
-ol > li:first-child
-{
-	border-left: 1px solid #ffffff;
-	border-radius: 20px;
-}
+
 
 ol > li:hover
 {
@@ -167,8 +177,7 @@ ol > li > ul > li:hover > a
 }
 
 body {
-background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,0.7679446778711485) 0%, rgba(34,137,195,1) 100%);
+
 }
 
 p.wciecie { 
